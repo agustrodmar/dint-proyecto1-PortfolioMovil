@@ -15,6 +15,7 @@ import com.arodmar432p.portfoliomovil.ui.theme.PortfolioMovilTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.remember
@@ -57,8 +58,22 @@ fun PantallaPrincipal() {
     val screenWidth = configuration.screenWidthDp
     val screenHeight = configuration.screenHeightDp
 
-    // Generar las posiciones aleatorias una sola vez y almacenarlas en una lista
-    val starPositions = remember { List(12) { Pair(Random.nextInt(screenWidth), Random.nextInt(screenHeight)) } }
+    // Defino las estrellas en posiciones por la parte inferior
+    // de la pantalla
+    val starPositions = remember { listOf(
+        Pair(screenWidth * 0.1f, screenHeight * 0.6f),
+        Pair(screenWidth * 0.2f, screenHeight * 0.7f),
+        Pair(screenWidth * 0.3f, screenHeight * 0.8f),
+        Pair(screenWidth * 0.4f, screenHeight * 0.9f),
+        Pair(screenWidth * 0.5f, screenHeight * 0.6f),
+        Pair(screenWidth * 0.6f, screenHeight * 0.7f),
+        Pair(screenWidth * 0.7f, screenHeight * 0.8f),
+        Pair(screenWidth * 0.8f, screenHeight * 0.9f),
+        Pair(screenWidth * 0.9f, screenHeight * 0.6f),
+        Pair(screenWidth * 0.1f, screenHeight * 0.7f),
+        Pair(screenWidth * 0.2f, screenHeight * 0.8f),
+        Pair(screenWidth * 0.3f, screenHeight * 0.9f)
+    ) }
 
     Box(
         modifier = Modifier
@@ -86,16 +101,21 @@ fun PantallaPrincipal() {
                 .height(134.dp)
         )
 
-        // Añadir una docena de estrellas
         for ((x, y) in starPositions) {
-            Image(
-                painter = painterResource(id = R.drawable.star),
-                contentDescription = "image description",
+            Box(
                 modifier = Modifier
-                    .padding(top = y.dp, start = x.dp)
-                    .width(22.dp)
-                    .height(10.22593.dp)
-            )
+                    .fillMaxSize()
+                    .align(Alignment.BottomStart)
+                    .offset(x = x.dp, y = y.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.star),
+                    contentDescription = "image description",
+                    modifier = Modifier
+                        .width(22.dp)
+                        .height(10.22593.dp)
+                )
+            }
         }
     }
 }
