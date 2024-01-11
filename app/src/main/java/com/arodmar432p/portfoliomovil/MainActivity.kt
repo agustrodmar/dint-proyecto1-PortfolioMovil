@@ -119,3 +119,23 @@ fun PantallaPrincipal() {
         }
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun AboutMe(){
+    Box(
+        modifier = Modifier
+            .width(393.dp)
+            .height(852.dp)
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(Color(0xFF2F254C), Color(0xFF2A0790)),
+                    startY = 0.0f,
+                    endY = Float.POSITIVE_INFINITY
+                )
+            )
+    ) {
+
+    }
+
+}
