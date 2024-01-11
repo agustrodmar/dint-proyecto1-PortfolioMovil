@@ -93,7 +93,7 @@ fun PantallaPrincipal() {
                 contentDescription = "image description",
                 modifier = Modifier
                     .padding(top = y.dp, start = x.dp)
-                    .width(2w2.dp)
+                    .width(22.dp)
                     .height(10.22593.dp)
             )
         }
