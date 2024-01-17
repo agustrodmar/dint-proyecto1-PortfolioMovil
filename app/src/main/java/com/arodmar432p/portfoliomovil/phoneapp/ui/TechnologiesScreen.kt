@@ -176,78 +176,78 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
         )
-    }
-    Image(
-        painter = painterResource(id = R.drawable.unity),
-        contentDescription = "Unity logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.cplusplus),
-        contentDescription = "C++ logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.angular),
-        contentDescription = "Angular logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.kotlin),
-        contentDescription = "kotlin logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.git),
-        contentDescription = "Git logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.java),
-        contentDescription = "Java logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.docker),
-        contentDescription = "Docker logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.css),
-        contentDescription = "JavaScript logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
-    Image(
-        painter = painterResource(id = R.drawable.html),
-        contentDescription = "HTML5 logo",
-        modifier = Modifier
-            .width(200.dp)
-            .height(130.dp)
-            .padding(12.dp)
-    )
 
+        Image(
+            painter = painterResource(id = R.drawable.unity),
+            contentDescription = "Unity logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.cplusplus),
+            contentDescription = "C++ logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.angular),
+            contentDescription = "Angular logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.kotlin),
+            contentDescription = "kotlin logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.git),
+            contentDescription = "Git logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.java),
+            contentDescription = "Java logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.docker),
+            contentDescription = "Docker logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.css),
+            contentDescription = "JavaScript logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.html),
+            contentDescription = "HTML5 logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+    }
 }
