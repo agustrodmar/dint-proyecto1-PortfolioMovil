@@ -115,7 +115,7 @@ fun AboutMe() {
                 .height(547.dp)
                 .background(
                     brush = Brush.verticalGradient(
-                        colors = listOf(Color(0xFF48194D), Color(0xFF48174D00)),
+                        colors = listOf(Color(0xFF48194D), Color(0x8A221A47)),
                         startY = 0.0f,
                         endY = Float.POSITIVE_INFINITY
                     ),

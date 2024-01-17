@@ -43,7 +43,6 @@ fun Technologies() {
     MainTechnologiesFrame()
 }
 
-@SuppressLint("InvalidColorHexValue")
 @Composable
 fun Background() {
 
