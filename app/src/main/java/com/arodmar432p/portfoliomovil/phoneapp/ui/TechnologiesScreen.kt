@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -28,10 +29,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.arodmar432p.portfoliomovil.R
 
+/**
+ * IMPORTANTE:
+ * TODO: PARA PRUEBAS DE DISEÑO mapa de calor: https://vas.3m.com/
+ * TODO: PRUEBA DE LOS CINCO SEGUNDOS: http://www.uxables.com/
+ * TODO: ENVIA EL DISEÑO A LOS USUARIOS PARA QUE LO TESTEEN: https://www.lyssna.com/
+ */
+
 @Preview(showBackground = true)
 @Composable
 fun Technologies() {
     Background()
+    MainTechnologiesFrame()
 }
 
 @SuppressLint("InvalidColorHexValue")
@@ -61,7 +70,15 @@ fun Background() {
         modifier = Modifier
             .width(393.dp)
             .height(852.dp)
-            .background(Brush.verticalGradient(colors = listOf(Color(0xFF2A0790), Color(0xFF2A0790), Color(0xFF4668E1))))
+            .background(
+                Brush.verticalGradient(
+                    colors = listOf(
+                        Color(0xFF2A0790),
+                        Color(0xFF2A0790),
+                        Color(0xFF4668E1)
+                    )
+                )
+            )
     ) {
         Text(
             text = "TECNOLOGÍAS QUE USO",
@@ -96,5 +113,141 @@ fun Background() {
             }
         }
 
+        Image(
+            painter = painterResource(id = R.drawable.cohete1),
+            contentDescription = "Just a rocket",
+            modifier = Modifier
+                .width(120.dp)
+                .height(180.dp)
+                .align(Alignment.BottomEnd)
+                .padding(end = 40.dp, bottom = 60.dp),
+            contentScale = ContentScale.Fit
+        )
+
+        Image(
+            painter= painterResource(id = R.drawable.sol),
+            contentDescription = "The sun",
+            modifier = Modifier
+                .width(120.dp)
+                .height(250.dp)
+                .align(Alignment.TopEnd)
+                .padding(end = 25.dp)
+        )
+
+        Image(
+            painter = painterResource(id = R.drawable.luna),
+            contentDescription = "The moon",
+            modifier = Modifier
+                .width(80.dp)
+                .height(200.dp)
+                .align(Alignment.BottomStart)
+                .padding(start = 20.dp, bottom = 120.dp)
+        )
     }
+}
+
+/**
+ * El marco en el que van a ir las tecnologías que voy a ir añadiendo.
+ */
+@Composable
+fun MainTechnologiesFrame() {
+
+    Box(
+        modifier = Modifier
+            .width(393.dp)
+            .height(852.dp)
+
+    ) {
+
+        Image(
+            painter = painterResource(id = R.drawable.java),
+            contentDescription = "Java logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+
+        Image(
+            painter = painterResource(id = R.drawable.python),
+            contentDescription = "Python logo",
+            modifier = Modifier
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+        )
+    }
+    Image(
+        painter = painterResource(id = R.drawable.unity),
+        contentDescription = "Unity logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.cplusplus),
+        contentDescription = "C++ logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.angular),
+        contentDescription = "Angular logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.kotlin),
+        contentDescription = "kotlin logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.git),
+        contentDescription = "Git logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.java),
+        contentDescription = "Java logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.docker),
+        contentDescription = "Docker logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.css),
+        contentDescription = "JavaScript logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+    Image(
+        painter = painterResource(id = R.drawable.html),
+        contentDescription = "HTML5 logo",
+        modifier = Modifier
+            .width(200.dp)
+            .height(130.dp)
+            .padding(12.dp)
+    )
+
 }

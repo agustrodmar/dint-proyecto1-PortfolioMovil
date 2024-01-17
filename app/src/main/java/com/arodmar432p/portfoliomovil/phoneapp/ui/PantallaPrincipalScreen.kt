@@ -55,7 +55,7 @@ fun PantallaPrincipal() {
             .fillMaxSize()
             .background(
                 brush = Brush.verticalGradient(
-                    colors = listOf(Color(0xFF000000), Color(0xFF2F254C)),
+                    colors = listOf(Color(0xFF000000), Color(0xFF000000), Color(0xFF2F254C)),
                     startY = 0.0f,
                     endY = Float.POSITIVE_INFINITY
                 )
