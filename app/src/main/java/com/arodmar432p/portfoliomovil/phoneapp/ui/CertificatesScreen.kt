@@ -69,6 +69,23 @@ fun CertificatesBackground() {
                 fontSize = 26.sp,
                 fontFamily = FontFamily(Font(R.font.bebasneue)),
                 fontWeight = FontWeight(400),
+                color = Color.Black,
+                textAlign = TextAlign.Justify
+            )
+        )
+
+        // Genero un segundo texto encima del primero para hacer efecto de sombras
+        Text(
+            text = "CERTIFICADOS",
+            modifier = Modifier
+                .width(110.25.dp)
+                .height(92.dp)
+                .align(Alignment.TopCenter)
+                .padding(top = 40.dp),
+            style = TextStyle(
+                fontSize = 26.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
                 color = Color(0xFFFFCB14),
                 textAlign = TextAlign.Justify
             )
