@@ -26,9 +26,11 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.arodmar432p.portfoliomovil.phoneapp.data.ScreenNavigation
 
@@ -60,11 +62,11 @@ fun MenuDots(onClick: () -> Unit) {
 fun NavigationBar(navController: NavController) {
     Box(
         modifier = Modifier
-            .size(700.dp, 750.dp)
+            .size(250.dp, 485.dp)
             .border(2.dp, Color.White, RoundedCornerShape(12.dp))
             .background(
                 brush = Brush.verticalGradient(
-                    colors = listOf(Color.Black.copy(alpha = 1f), Color.Black.copy(alpha = 0.3f)),
+                    colors = listOf(Color.Black.copy(alpha = 1f), Color.Black.copy(alpha = 0.85f)),
                     startY = 0.0f,
                     endY = Float.POSITIVE_INFINITY
                 )
@@ -222,9 +224,27 @@ fun NavigationBar(navController: NavController) {
             modifier = Modifier
                 .width(190.dp)
                 .height(25.dp)
-                .offset(x = (-32).dp, y = (140).dp)
+                .offset(x = (-32).dp, y = (142).dp)
                 .clickable { navController.navigate(ScreenNavigation.ContactScreen.route) }
         )
+
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewNavigationMenu() {
+    val navController = rememberNavController()
+    NavigationBar(navController)
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewMenuDots(){
+    val navController = rememberNavController()
+    MenuDots {
 
     }
 }

@@ -1,5 +1,6 @@
 package com.arodmar432p.portfoliomovil.phoneapp.ui
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -9,9 +10,9 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -35,6 +36,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 /**
  * IMPORTANTE:
@@ -53,29 +55,25 @@ fun Technologies(navController: NavController) {
 
     // Cuando se pulse sobre este botón, se mostrará NavigationBar()
     MenuDots(onClick = { showNavigationBar = true })
+    TechnologiesStatusBar()
 
     // Si showNavigationBar es true, se muestra la barra de navegación
     if (showNavigationBar) {
         Box(
             modifier = Modifier
-                .padding(top = 80.dp)
         ) {
             Dialog(onDismissRequest = { showNavigationBar = false }) {
                 Box(
                     modifier = Modifier
-                        .size(250.dp, 480.dp)
-                        .offset(x = (-32).dp , y = (-32).dp)
-                        .background(
-                            brush = Brush.verticalGradient(
-                                colors = listOf(Color.Black.copy(alpha = 1f), Color.Black.copy(alpha = 0.5f)),
-                                startY = 0.0f,
-                                endY = Float.POSITIVE_INFINITY
-                            ),
-                            shape = RoundedCornerShape(16.dp) // Bordes redondeados
-                        ),
+                        .fillMaxSize()
+                        .height(480.dp)
+                        .size(150.dp, 480.dp)
+                        .height(20.dp)
+                        .offset(x = (-32).dp),
                     contentAlignment = Alignment.TopStart
                 ) {
                     NavigationBar(navController)
+
                 }
             }
         }
@@ -212,99 +210,173 @@ fun MainTechnologiesFrame() {
             .height(852.dp)
 
     ) {
+        Text(
+            text = "JAVA",
+            style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .offset(x = ((-42).dp), y = (-100).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
 
         Image(
             painter = painterResource(id = R.drawable.java),
             contentDescription = "Java logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = (-180).dp)
         )
 
         Image(
             painter = painterResource(id = R.drawable.python),
             contentDescription = "Python logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(y = (-180).dp)
         )
 
         Image(
             painter = painterResource(id = R.drawable.unity),
             contentDescription = "Unity logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = (-180).dp)
         )
+
         Image(
             painter = painterResource(id = R.drawable.cplusplus),
             contentDescription = "C++ logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = (-60).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.angular),
             contentDescription = "Angular logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(y = (-60).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.kotlin),
             contentDescription = "kotlin logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = (-60).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.git),
             contentDescription = "Git logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = 60.dp)
         )
         Image(
-            painter = painterResource(id = R.drawable.java),
-            contentDescription = "Java logo",
+            painter = painterResource(id = R.drawable.csharp),
+            contentDescription = "C#",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(y = 60.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.docker),
             contentDescription = "Docker logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = 60.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.css),
-            contentDescription = "JavaScript logo",
+            contentDescription = "CSS logo",
             modifier = Modifier
+                .size(75.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = 180.dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.javascript),
+            contentDescription = "JavaScript logo",
+            modifier = Modifier
+                .size(75.dp)
+                .width(200.dp)
+                .height(130.dp)
+                .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(y = 180.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.html),
             contentDescription = "HTML5 logo",
             modifier = Modifier
+                .size(78.dp)
                 .width(200.dp)
                 .height(130.dp)
                 .padding(12.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = 180.dp)
         )
     }
 }
+
+@Composable
+fun TechnologiesStatusBar() {
+    // Obtiene una referencia a SystemUiController
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+        // Establece el color de la barra de estado y los íconos
+        systemUiController.setStatusBarColor(
+            color = Color.Black,
+        )
+    }
+}
+
 
 @Preview(showBackground = true)
 @Composable

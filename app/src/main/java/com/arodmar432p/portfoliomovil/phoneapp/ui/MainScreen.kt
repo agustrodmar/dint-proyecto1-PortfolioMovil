@@ -4,14 +4,17 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,6 +37,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
@@ -104,29 +108,21 @@ fun MainScreen(navController: NavController) {
 
         // Cuando se pulse sobre este botón, se mostrará NavigationBar()
         MenuDots(onClick = { showNavigationBar = true })
+        BlackStatusBar()
 
         // Si showNavigationBar es true, se muestra la barra de navegación
         if (showNavigationBar) {
             Box(
                 modifier = Modifier
-                    .padding(top = 80.dp)
             ) {
                 Dialog(onDismissRequest = { showNavigationBar = false }) {
                     Box(
                         modifier = Modifier
-                            .size(250.dp, 480.dp)
-                            .offset(x = (-32).dp, y = (-32).dp)
-                            .background(
-                                brush = Brush.verticalGradient(
-                                    colors = listOf(
-                                        Color.Black.copy(alpha = 1f),
-                                        Color.Black.copy(alpha = 0.5f)
-                                    ),
-                                    startY = 0.0f,
-                                    endY = Float.POSITIVE_INFINITY
-                                ),
-                                shape = RoundedCornerShape(16.dp) // Bordes redondeados
-                            ),
+                            .fillMaxSize()
+                            .height(480.dp)
+                            .size(150.dp, 480.dp)
+                            .height(20.dp)
+                            .offset(x = (-32).dp),
                         contentAlignment = Alignment.TopStart
                     ) {
                         NavigationBar(navController)
@@ -134,6 +130,19 @@ fun MainScreen(navController: NavController) {
                 }
             }
         }
+    }
+}
+
+@Composable
+fun BlackStatusBar() {
+    // Obtiene una referencia a SystemUiController
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+        // Establece el color de la barra de estado y los íconos
+        systemUiController.setStatusBarColor(
+            color = Color.Black,
+        )
     }
 }
 
