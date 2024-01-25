@@ -131,6 +131,7 @@ fun Background() {
                 textAlign = TextAlign.Justify
             )
         )
+
         // Genero un segundo texto para formar una sombra sólida.
         Text(
             text = "TECNOLOGÍAS QUE USO",
@@ -146,6 +147,200 @@ fun Background() {
                 color = Color(0xFFFFCB14),
                 textAlign = TextAlign.Justify
             )
+        )
+
+        // TODO: Añadir los textos de las apps aquí
+        Text(
+            text = "JAVA",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = (-100).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "PYTHON",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(y = (-100).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "unity",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = (-100).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "C++",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = (10).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "ANGULAR",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(y = (10).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "DOCKER",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = (10).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "GIT",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = (120).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "C#",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(y = 120.dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "KOTLIN",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = 120.dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "CSS3",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = (-100).dp, y = (230).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "JAVA",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(y = (230).dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
+        )
+        Text(
+            text = "JAVA",
+            style = TextStyle(
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(25.dp)
+                .align(Alignment.Center)
+                .offset(x = 100.dp, y = 230.dp)
+            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
 
         for ((x, y) in starPositions) {
@@ -169,10 +364,12 @@ fun Background() {
             painter = painterResource(id = R.drawable.cohete1),
             contentDescription = "Just a rocket",
             modifier = Modifier
+                .size(140.dp)
                 .width(120.dp)
                 .height(180.dp)
                 .align(Alignment.BottomEnd)
-                .padding(end = 40.dp, bottom = 60.dp),
+                .padding(end = 40.dp, bottom = 60.dp)
+                .offset(x = 20.dp, y = 30.dp),
             contentScale = ContentScale.Fit
         )
 
@@ -180,9 +377,11 @@ fun Background() {
             painter= painterResource(id = R.drawable.sol),
             contentDescription = "The sun",
             modifier = Modifier
+                .size(90.dp)
                 .width(120.dp)
                 .height(250.dp)
                 .align(Alignment.TopEnd)
+                .offset(y = 40.dp)
                 .padding(end = 25.dp)
         )
 
@@ -190,9 +389,11 @@ fun Background() {
             painter = painterResource(id = R.drawable.luna),
             contentDescription = "The moon",
             modifier = Modifier
-                .width(80.dp)
+                .size(160.dp)
+                .width(40.dp)
                 .height(200.dp)
                 .align(Alignment.BottomStart)
+                .offset(x = -20.dp, y = 40.dp)
                 .padding(start = 20.dp, bottom = 120.dp)
         )
     }
@@ -210,21 +411,6 @@ fun MainTechnologiesFrame() {
             .height(852.dp)
 
     ) {
-        Text(
-            text = "JAVA",
-            style = TextStyle(
-                fontSize = 20.sp,
-                fontFamily = FontFamily(Font(R.font.bebasneue)),
-                fontWeight = FontWeight(400),
-                color = Color(0xFFFFFFFF),
-                textAlign = TextAlign.Center,
-            ),
-            modifier = Modifier
-                .width(190.dp)
-                .height(25.dp)
-                .offset(x = ((-42).dp), y = (-100).dp)
-            // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
-        )
 
         Image(
             painter = painterResource(id = R.drawable.java),
@@ -235,7 +421,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (-180).dp)
+                .offset(x = (-100).dp, y = (-150).dp)
         )
 
         Image(
@@ -247,7 +433,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(y = (-180).dp)
+                .offset(y = (-150).dp)
         )
 
         Image(
@@ -259,7 +445,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = (-180).dp)
+                .offset(x = 100.dp, y = (-150).dp)
         )
 
         Image(
@@ -271,7 +457,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (-60).dp)
+                .offset(x = (-100).dp, y = (-40).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.angular),
@@ -282,7 +468,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(y = (-60).dp)
+                .offset(y = (-40).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.kotlin),
@@ -293,7 +479,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = (-60).dp)
+                .offset(x = 100.dp, y = (70).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.git),
@@ -304,7 +490,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = 60.dp)
+                .offset(x = (-100).dp, y = (70).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.csharp),
@@ -315,7 +501,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(y = 60.dp)
+                .offset(y = (70).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.docker),
@@ -326,7 +512,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = 60.dp)
+                .offset(x = 100.dp, y = (-40).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.css),
@@ -372,7 +558,7 @@ fun TechnologiesStatusBar() {
     SideEffect {
         // Establece el color de la barra de estado y los íconos
         systemUiController.setStatusBarColor(
-            color = Color.Black,
+            color = Color(0xFF2A0790),
         )
     }
 }

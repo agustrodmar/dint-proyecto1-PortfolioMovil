@@ -1,7 +1,9 @@
 package com.arodmar432p.portfoliomovil.phoneapp.ui
 
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -9,6 +11,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,6 +24,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -35,6 +40,9 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import androidx.compose.material.Card
+
+
 
 
 @Composable
@@ -67,6 +75,20 @@ fun Projects(navController: NavController) {
                 }
             }
         }
+    }
+
+    // Aquí es donde añadimos las tarjetas en un LazyRow
+    LazyRow(
+        modifier = Modifier
+            .fillMaxSize()
+            .offset(y = 200.dp),
+        horizontalArrangement = Arrangement.Center) {
+        item { PythonCard() }
+        item { FigmaCard() }
+        item { BdCard() }
+        item { ComposeCard() }
+        item { ErpCard() }
+        item { UnityCard() }
     }
 }
 
@@ -174,9 +196,109 @@ fun ProjectsStatusBar() {
     }
 }
 
+
+
 @Preview(showBackground = true)
 @Composable
-fun PreviewProjects() {
-    val navController = rememberNavController()
-    Projects(navController)
+fun PythonCard() {
+    val image: Painter = painterResource(id = R.drawable.proyectopython)
+    Card(
+        shape = RoundedCornerShape(6.dp),
+        modifier = Modifier
+            .width(185.dp)
+            .padding(horizontal = 16.dp),
+        backgroundColor = Color.Transparent
+    ) {
+        Image(
+            painter = image,
+            contentDescription = "My Python Projects",
+            contentScale = ContentScale.Crop
+        )
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun FigmaCard(){
+    val image: Painter = painterResource(id = R.drawable.proyectoopochat)
+    Card(
+        shape = RoundedCornerShape(6.dp),
+        modifier = Modifier.width(185.dp),
+        backgroundColor = Color.Transparent
+    ) {
+        Image(
+            painter = image,
+            contentDescription = "My Python Projects",
+            contentScale = ContentScale.Crop
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BdCard() {
+    val image: Painter = painterResource(id = R.drawable.proyectobd)
+    Card(
+        shape = RoundedCornerShape(6.dp),
+        modifier = Modifier.width(185.dp),
+        backgroundColor = Color.Transparent
+    ) {
+        Image(
+            painter = image,
+            contentDescription = "My Python Projects",
+            contentScale = ContentScale.Crop
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ComposeCard(){
+    val image: Painter = painterResource(id = R.drawable.proyectocompose)
+    Card(
+        shape = RoundedCornerShape(6.dp),
+        modifier = Modifier.width(185.dp),
+        backgroundColor = Color.Transparent
+    ) {
+        Image(
+            painter = image,
+            contentDescription = "My Python Projects",
+            contentScale = ContentScale.Crop
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ErpCard() {
+    val image: Painter = painterResource(id = R.drawable.proyectoerp)
+    Card(
+        shape = RoundedCornerShape(6.dp),
+        modifier = Modifier.width(185.dp),
+        backgroundColor = Color.Transparent
+    ) {
+        Image(
+            painter = image,
+            contentDescription = "My Python Projects",
+            contentScale = ContentScale.Crop
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun UnityCard(){
+    val image: Painter = painterResource(id = R.drawable.proyectounity)
+    Card(
+        shape = RoundedCornerShape(6.dp),
+        modifier = Modifier.width(185.dp),
+        backgroundColor = Color.Transparent
+    ) {
+        Image(
+            painter = image,
+            contentDescription = "My Python Projects",
+            contentScale = ContentScale.Crop
+        )
+    }
 }
