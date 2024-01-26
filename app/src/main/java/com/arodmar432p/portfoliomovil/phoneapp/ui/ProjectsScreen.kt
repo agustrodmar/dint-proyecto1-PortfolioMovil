@@ -205,8 +205,7 @@ fun PythonCard() {
     Card(
         shape = RoundedCornerShape(6.dp),
         modifier = Modifier
-            .width(185.dp)
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = 100.dp),
         backgroundColor = Color.Transparent
     ) {
         Image(
@@ -224,12 +223,13 @@ fun FigmaCard(){
     val image: Painter = painterResource(id = R.drawable.proyectoopochat)
     Card(
         shape = RoundedCornerShape(6.dp),
-        modifier = Modifier.width(185.dp),
+        modifier = Modifier
+                .padding(horizontal = 100.dp),
         backgroundColor = Color.Transparent
     ) {
         Image(
             painter = image,
-            contentDescription = "My Python Projects",
+            contentDescription = "Figma Projects Card",
             contentScale = ContentScale.Crop
         )
     }
@@ -241,12 +241,13 @@ fun BdCard() {
     val image: Painter = painterResource(id = R.drawable.proyectobd)
     Card(
         shape = RoundedCornerShape(6.dp),
-        modifier = Modifier.width(185.dp),
+        modifier = Modifier
+                .padding(horizontal = 100.dp),
         backgroundColor = Color.Transparent
     ) {
         Image(
             painter = image,
-            contentDescription = "My Python Projects",
+            contentDescription = "DB Projects Card",
             contentScale = ContentScale.Crop
         )
     }
@@ -258,12 +259,13 @@ fun ComposeCard(){
     val image: Painter = painterResource(id = R.drawable.proyectocompose)
     Card(
         shape = RoundedCornerShape(6.dp),
-        modifier = Modifier.width(185.dp),
+        modifier = Modifier
+            .padding(horizontal = 100.dp),
         backgroundColor = Color.Transparent
     ) {
         Image(
             painter = image,
-            contentDescription = "My Python Projects",
+            contentDescription = "Compose Projects Card",
             contentScale = ContentScale.Crop
         )
     }
@@ -275,12 +277,13 @@ fun ErpCard() {
     val image: Painter = painterResource(id = R.drawable.proyectoerp)
     Card(
         shape = RoundedCornerShape(6.dp),
-        modifier = Modifier.width(185.dp),
+        modifier = Modifier
+            .padding(horizontal = 100.dp),
         backgroundColor = Color.Transparent
     ) {
         Image(
             painter = image,
-            contentDescription = "My Python Projects",
+            contentDescription = "ERP Projects Card",
             contentScale = ContentScale.Crop
         )
     }
@@ -292,12 +295,13 @@ fun UnityCard(){
     val image: Painter = painterResource(id = R.drawable.proyectounity)
     Card(
         shape = RoundedCornerShape(6.dp),
-        modifier = Modifier.width(185.dp),
+        modifier = Modifier
+            .padding(horizontal = 100.dp),
         backgroundColor = Color.Transparent
     ) {
         Image(
             painter = image,
-            contentDescription = "My Python Projects",
+            contentDescription = "Unity Projects Card",
             contentScale = ContentScale.Crop
         )
     }
