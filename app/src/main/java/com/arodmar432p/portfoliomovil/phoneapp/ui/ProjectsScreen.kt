@@ -77,7 +77,7 @@ fun Projects(navController: NavController) {
         }
     }
 
-    // Aquí es donde añadimos las tarjetas en un LazyRow
+    // El LazyRow para hacer scroll entre proyectos
     LazyRow(
         modifier = Modifier
             .fillMaxSize()

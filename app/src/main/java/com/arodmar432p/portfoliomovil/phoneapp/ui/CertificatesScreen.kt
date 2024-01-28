@@ -2,6 +2,7 @@ package com.arodmar432p.portfoliomovil.phoneapp.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,7 +11,9 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -22,6 +25,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -168,6 +173,18 @@ fun CertificatesBackground() {
                 .offset(y = (-80).dp, x = (30).dp)
         )
 
+        // Las tarjetas que representan los certificados junto a un scroll
+        LazyRow(
+            modifier = Modifier
+                .fillMaxSize()
+                .offset(y = 200.dp),
+            horizontalArrangement = Arrangement.Center) {
+            item { PythonCertificate() }
+            item { MySqlCertificate() }
+            item { JavaCertificate() }
+            item { CsharpCertificate() }
+        }
+
     }
 }
 
@@ -183,6 +200,60 @@ fun CertificatesStatusBar() {
         )
     }
 }
+
+@Preview
+@Composable
+fun PythonCertificate(){
+    val image: Painter = painterResource(id = R.drawable.pythoncertificate)
+    Image(
+        painter = image,
+        contentDescription = "Python Certificate Card",
+        modifier = Modifier
+            .padding( horizontal = 100.dp)
+            .size(220.dp)
+    )
+}
+
+@Preview
+@Composable
+fun CsharpCertificate(){
+    val image: Painter = painterResource(id = R.drawable.csharpcertificate)
+    Image(
+        painter = image,
+        contentDescription = "C# Cerificate Card",
+        modifier = Modifier
+            .padding( horizontal = 100.dp)
+            .size(220.dp)
+    )
+}
+
+
+@Preview
+@Composable
+fun MySqlCertificate(){
+    val image: Painter = painterResource(id = R.drawable.mysqlcertificate)
+    Image(
+        painter = image,
+        contentDescription = "MySQL Certificate Card",
+        modifier = Modifier
+            .padding( horizontal = 100.dp)
+            .size(220.dp)
+    )
+}
+
+@Preview
+@Composable
+fun JavaCertificate(){
+    val image: Painter = painterResource(id = R.drawable.pythoncertificate)
+    Image(
+        painter = image,
+        contentDescription = "Java 8 Certificate Card",
+        modifier = Modifier
+            .padding( horizontal = 100.dp)
+            .size(220.dp)
+    )
+}
+
 
 @Preview(showBackground = true)
 @Composable
