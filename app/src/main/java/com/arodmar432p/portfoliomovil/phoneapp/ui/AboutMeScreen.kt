@@ -6,12 +6,14 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -69,42 +71,13 @@ fun AboutMe(navController: NavController) {
                 .height(44.23907.dp)
         )
 
-        Column(
-            modifier = Modifier.align(Alignment.TopCenter),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.objetivos),
-                contentDescription = "image description",
-                modifier = Modifier
-                    .padding(top = 30.dp)
-                    .width(119.dp)
-                    .height(147.dp)
-            )
-
-            Text(
-                text = "OBJETIVOS",
-                style = TextStyle(
-                    fontSize = 25.76.sp,
-                    lineHeight = 18.89.sp,
-                    fontFamily = FontFamily(Font(R.font.bebasneue)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFFFFCB14),
-                    textAlign = TextAlign.Center,
-                    letterSpacing = 1.07.sp,
-                ),
-                modifier = Modifier
-                    .width(123.14343.dp)
-                    .height(39.dp)
-            )
-        }
-
         Box(
             modifier = Modifier
                 .align(Alignment.BottomStart)
-                .padding(top = 35.dp)
-                .width(80.dp)
-                .height(65.89185.dp)
+                .width(85.dp)
+                .height(67.dp)
+                .size(-20.dp)
+                .offset(x = 10.dp, y = (-20).dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.planeta2),
@@ -120,39 +93,21 @@ fun AboutMe(navController: NavController) {
                 .width(64.dp)
         )
 
-        // El box de la caja con el texto
-        Box(
+        LazyRow(
             modifier = Modifier
-                .align(Alignment.Center)
-                .padding(top = 120.dp)
-                .width(274.dp)
-                .height(547.dp)
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(Color(0xFF48194D), Color(0x8A221A47)),
-                        startY = 0.0f,
-                        endY = Float.POSITIVE_INFINITY
-                    ),
-                    shape = RoundedCornerShape(1.dp) // Ajustar este valor para cambiar la redondez de las esquinas
-                )
-                .border(
-                    width = 2.dp,
-                    color = Color(0xFF7C1DF5),
-                    shape = RoundedCornerShape(10.dp) // la forma del borde me debe coincidir con la forma del fondo
-                )
-        ) {
-            Column(
-                verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxSize()
-            ) {
-            }
+                .fillMaxSize()
+                .offset(y = (-10).dp),
+            horizontalArrangement = Arrangement.Center) {
+            item { TargetsBox() }
+            item { BackgroundBox() }
+            item { ValuesBox() }
         }
 
         // Cuando se pulse sobre este botón, se mostrará NavigationBar()
         MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
 
         AboutStatusBar()
+
 
         // Si showNavigationBar es true, se muestra la barra de navegación
         if (showNavigationBar) {
@@ -163,7 +118,7 @@ fun AboutMe(navController: NavController) {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .height(480.dp)
+                            .height(420.dp)
                             .size(150.dp, 480.dp)
                             .height(20.dp)
                             .offset(x = (-32).dp),
@@ -196,4 +151,205 @@ fun AboutStatusBar() {
 fun PreviewAboutMe() {
     val navController = rememberNavController()
     AboutMe(navController)
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TargetsBox() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .offset(y = (-120).dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image( // La imagen se muestra arriba del todo
+            painter = painterResource(id = R.drawable.objetivos),
+            contentDescription = "A guy on a Rocket",
+            modifier = Modifier
+                .size(120.dp)
+                .width(119.dp)
+                .height(220.dp)
+                .offset(y = (80).dp)
+        )
+
+        Text( // El texto se muestra entre la caja y la imagen
+            text = "OBJETIVOS",
+            style = TextStyle(
+                fontSize = 25.76.sp,
+                lineHeight = 18.89.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFCB14),
+                textAlign = TextAlign.Center,
+                letterSpacing = 1.07.sp,
+            ),
+            modifier = Modifier
+                .width(123.14343.dp)
+                .height(39.dp)
+                .offset(y = 85.dp)
+        )
+
+        Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
+            modifier = Modifier
+                .padding(horizontal = 50.dp)
+                .width(274.dp)
+                .height(475.dp)
+                .offset( y = 90.dp)
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(Color(0xFF48194D), Color(0x8A221A47)),
+                        startY = 0.0f,
+                        endY = Float.POSITIVE_INFINITY
+                    ),
+                    shape = RoundedCornerShape(1.dp) // Ajustar este valor para cambiar la redondez de las esquinas
+                )
+                .border(
+                    width = 2.dp,
+                    color = Color(0xFF7C1DF5),
+                    shape = RoundedCornerShape(10.dp) // la forma del borde me debe coincidir con la forma del fondo
+                )
+        ) {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxSize()
+            ) {
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BackgroundBox() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .offset(y = (-120).dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image( // La imagen se muestra arriba del todo
+            painter = painterResource(id = R.drawable.trayectoria),
+            contentDescription = "A guy on a Rocket",
+            modifier = Modifier
+                .size(120.dp)
+                .width(119.dp)
+                .height(220.dp)
+                .offset(y = (80).dp)
+        )
+
+        Text( // El texto se muestra entre la caja y la imagen
+            text = "TRAYECTORIA",
+            style = TextStyle(
+                fontSize = 25.76.sp,
+                lineHeight = 18.89.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFCB14),
+                textAlign = TextAlign.Center,
+                letterSpacing = 1.07.sp,
+            ),
+            modifier = Modifier
+                .width(123.14343.dp)
+                .height(39.dp)
+                .offset(y = (85).dp)
+        )
+
+        Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
+            modifier = Modifier
+                .padding(horizontal = 50.dp)
+                .width(274.dp)
+                .height(475.dp)
+                .offset(y = 90.dp)
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(Color(0xFF48194D), Color(0x8A221A47)),
+                        startY = 0.0f,
+                        endY = Float.POSITIVE_INFINITY
+                    ),
+                    shape = RoundedCornerShape(1.dp) // Ajustar este valor para cambiar la redondez de las esquinas
+                )
+                .border(
+                    width = 2.dp,
+                    color = Color(0xFF7C1DF5),
+                    shape = RoundedCornerShape(10.dp) // la forma del borde me debe coincidir con la forma del fondo
+                )
+        ) {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxSize()
+            ) {
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ValuesBox() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .offset(y = (-120).dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image( // La imagen se muestra arriba del todo
+            painter = painterResource(id = R.drawable.valores),
+            contentDescription = "A picture of a robot",
+            modifier = Modifier
+                .size(120.dp)
+                .width(119.dp)
+                .height(220.dp)
+                .offset(y = (80).dp)
+        )
+
+        Text( // El texto se muestra entre la caja y la imagen
+            text = "VALORES",
+            style = TextStyle(
+                fontSize = 25.76.sp,
+                lineHeight = 18.89.sp,
+                fontFamily = FontFamily(Font(R.font.bebasneue)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFCB14),
+                textAlign = TextAlign.Center,
+                letterSpacing = 1.07.sp,
+            ),
+            modifier = Modifier
+                .width(123.14343.dp)
+                .height(39.dp)
+                .offset(y = (85).dp)
+        )
+
+        Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
+            modifier = Modifier
+                .padding(horizontal = 50.dp)
+                .width(274.dp)
+                .height(475.dp)
+                .offset(y = 90.dp)
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(Color(0xFF48194D), Color(0x8A221A47)),
+                        startY = 0.0f,
+                        endY = Float.POSITIVE_INFINITY
+                    ),
+                    shape = RoundedCornerShape(1.dp) // Ajustar este valor para cambiar la redondez de las esquinas
+                )
+                .border(
+                    width = 2.dp,
+                    color = Color(0xFF7C1DF5),
+                    shape = RoundedCornerShape(10.dp) // la forma del borde me debe coincidir con la forma del fondo
+                )
+        ) {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxSize()
+            ) {
+            }
+        }
+    }
 }
