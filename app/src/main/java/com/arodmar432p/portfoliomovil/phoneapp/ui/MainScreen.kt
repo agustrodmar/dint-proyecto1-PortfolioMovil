@@ -107,7 +107,8 @@ fun MainScreen(navController: NavController) {
         }
 
         // Cuando se pulse sobre este botón, se mostrará NavigationBar()
-        MenuDots(onClick = { showNavigationBar = true })
+        MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenublanco)
+
         BlackStatusBar()
 
         // Si showNavigationBar es true, se muestra la barra de navegación

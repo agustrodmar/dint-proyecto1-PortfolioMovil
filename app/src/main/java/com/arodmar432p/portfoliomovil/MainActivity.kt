@@ -15,7 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.phoneapp.data.ScreenNavigation
 import com.arodmar432p.portfoliomovil.phoneapp.ui.AboutMe
 import com.arodmar432p.portfoliomovil.phoneapp.ui.Certificates
-import com.arodmar432p.portfoliomovil.phoneapp.ui.Contact
+import com.arodmar432p.portfoliomovil.phoneapp.ui.ContactScreen
 import com.arodmar432p.portfoliomovil.ui.theme.PortfolioMovilTheme
 import com.arodmar432p.portfoliomovil.phoneapp.ui.MainScreen
 import com.arodmar432p.portfoliomovil.phoneapp.ui.Projects
@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                             Projects(navController)
                         }
                         composable(ScreenNavigation.ContactScreen.route) {
-                            Contact(navController)
+                            ContactScreen(navController)
                         }
                     }
                 }

@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -26,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -54,7 +51,8 @@ fun Certificates(navController: NavController) {
     CertificatesBackground()
 
     // Cuando se pulse sobre este botón, se mostrará NavigationBar()
-    MenuDots(onClick = { showNavigationBar = true })
+    MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
+
     CertificatesStatusBar()
 
     // Si showNavigationBar es true, se muestra la barra de navegación
@@ -209,7 +207,7 @@ fun PythonCertificate(){
         painter = image,
         contentDescription = "Python Certificate Card",
         modifier = Modifier
-            .padding( horizontal = 100.dp)
+            .padding( horizontal = 90.dp)
             .size(220.dp)
     )
 }

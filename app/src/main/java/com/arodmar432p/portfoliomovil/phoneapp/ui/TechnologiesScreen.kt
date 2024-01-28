@@ -54,7 +54,8 @@ fun Technologies(navController: NavController) {
     MainTechnologiesFrame()
 
     // Cuando se pulse sobre este botón, se mostrará NavigationBar()
-    MenuDots(onClick = { showNavigationBar = true })
+    MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
+
     TechnologiesStatusBar()
 
     // Si showNavigationBar es true, se muestra la barra de navegación
@@ -163,7 +164,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (-100).dp)
+                .offset(x = (-100).dp, y = (-130).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -179,7 +180,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(y = (-100).dp)
+                .offset(y = (-130).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -195,7 +196,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = (-100).dp)
+                .offset(x = 100.dp, y = (-130).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -211,7 +212,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (10).dp)
+                .offset(x = (-100).dp, y = (-20).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -227,7 +228,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(y = (10).dp)
+                .offset(y = (-20).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -243,7 +244,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = (10).dp)
+                .offset(x = 100.dp, y = (-20).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -259,7 +260,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (120).dp)
+                .offset(x = (-100).dp, y = (90).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -275,7 +276,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(y = 120.dp)
+                .offset(y = 90.dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -291,7 +292,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = 120.dp)
+                .offset(x = 100.dp, y = 90.dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -307,7 +308,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (230).dp)
+                .offset(x = (-100).dp, y = (200).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -323,7 +324,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(y = (230).dp)
+                .offset(y = (200).dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
         Text(
@@ -339,7 +340,7 @@ fun Background() {
                 .width(190.dp)
                 .height(25.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = 230.dp)
+                .offset(x = 100.dp, y = 200.dp)
             // .clickable { navController.navigate(ScreenNavigation.AboutMeScreen.route) }
         )
 
@@ -421,7 +422,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (-150).dp)
+                .offset(x = (-100).dp, y = (-180).dp)
         )
 
         Image(
@@ -433,7 +434,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(y = (-150).dp)
+                .offset(y = (-180).dp)
         )
 
         Image(
@@ -445,7 +446,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = (-150).dp)
+                .offset(x = 100.dp, y = (-180).dp)
         )
 
         Image(
@@ -457,7 +458,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (-40).dp)
+                .offset(x = (-100).dp, y = (-70).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.angular),
@@ -468,7 +469,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(y = (-40).dp)
+                .offset(y = (-70).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.kotlin),
@@ -479,7 +480,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = (70).dp)
+                .offset(x = 100.dp, y = (40).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.git),
@@ -490,7 +491,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = (70).dp)
+                .offset(x = (-100).dp, y = (40).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.csharp),
@@ -501,7 +502,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(y = (70).dp)
+                .offset(y = (40).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.docker),
@@ -512,7 +513,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = (-40).dp)
+                .offset(x = 100.dp, y = (-70).dp)
         )
         Image(
             painter = painterResource(id = R.drawable.css),
@@ -523,7 +524,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = (-100).dp, y = 180.dp)
+                .offset(x = (-100).dp, y = 150.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.javascript),
@@ -534,7 +535,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(y = 180.dp)
+                .offset(y = 150.dp)
         )
         Image(
             painter = painterResource(id = R.drawable.html),
@@ -545,7 +546,7 @@ fun MainTechnologiesFrame() {
                 .height(130.dp)
                 .padding(12.dp)
                 .align(Alignment.Center)
-                .offset(x = 100.dp, y = 180.dp)
+                .offset(x = 100.dp, y = 150.dp)
         )
     }
 }

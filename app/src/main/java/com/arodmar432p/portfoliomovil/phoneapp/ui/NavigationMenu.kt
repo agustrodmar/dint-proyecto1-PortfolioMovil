@@ -35,7 +35,7 @@ import com.arodmar432p.portfoliomovil.R
 import com.arodmar432p.portfoliomovil.phoneapp.data.ScreenNavigation
 
 @Composable
-fun MenuDots(onClick: () -> Unit) {
+fun MenuDots(onClick: () -> Unit, drawableId: Int) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.TopStart
@@ -50,7 +50,7 @@ fun MenuDots(onClick: () -> Unit) {
                 .offset(x = 8.dp, y = (15).dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.menu),
+                painter = painterResource(id = drawableId),
                 contentDescription = "Three dots button to open Menu bar",
                 contentScale = ContentScale.Fit
             )
@@ -239,12 +239,3 @@ fun PreviewNavigationMenu() {
     NavigationBar(navController)
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewMenuDots(){
-    val navController = rememberNavController()
-    MenuDots {
-
-    }
-}
