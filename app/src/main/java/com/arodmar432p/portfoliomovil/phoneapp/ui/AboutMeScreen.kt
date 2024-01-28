@@ -6,7 +6,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
@@ -27,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -48,6 +48,25 @@ fun AboutMe(navController: NavController) {
     // Estado para controlar si se muestra o no la barra de navegación
     var showNavigationBar by remember { mutableStateOf(false) }
 
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+    val screenHeight = configuration.screenHeightDp
+
+    // Defino las estrellas en posiciones por la parte inferior
+    // de la pantalla
+    val starPositions = remember { listOf(
+        Pair(screenWidth * 0.07f, screenHeight * 0.85f),
+        Pair(screenWidth * 0.85f, screenHeight * 0.21f),
+        Pair(screenWidth * 0.53f, screenHeight * 0.96f),
+        Pair(screenWidth * 0.3f, screenHeight * 0.07f),
+        Pair(screenWidth * 0.8f, screenHeight * 0.95f),
+        Pair(screenWidth * 0.1f, screenHeight * 0.08f),
+        Pair(screenWidth * 0.15f, screenHeight * 0.18f),
+        Pair(screenWidth * 0.84f, screenHeight * 0.89f),
+        Pair(screenWidth * 0.35f, screenHeight * 0.23f),
+        Pair(screenWidth * 0.6f, screenHeight * 0.12f)
+    ) }
+
     Box(
         modifier = Modifier
             .width(393.dp)
@@ -62,7 +81,7 @@ fun AboutMe(navController: NavController) {
     ) {
         Image(
             painter = painterResource(id = R.drawable.planeta1),
-            contentDescription = "image description",
+            contentDescription = "A blue planet",
             contentScale = ContentScale.None,
             modifier = Modifier
                 .align(Alignment.TopEnd)
@@ -71,18 +90,29 @@ fun AboutMe(navController: NavController) {
                 .height(44.23907.dp)
         )
 
+        Image(
+            painter = painterResource(id = R.drawable.ufo),
+            contentDescription = "An UFO picture",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .width(80.dp)
+                .height(32.5.dp)
+                .offset(x = (-20).dp, y = (110.dp))
+        )
+
         Box(
             modifier = Modifier
                 .align(Alignment.BottomStart)
-                .width(85.dp)
-                .height(67.dp)
-                .size(-20.dp)
-                .offset(x = 10.dp, y = (-20).dp)
+                .width(45.dp)
+                .height(37.dp)
+                .size((-20).dp)
+                .offset(x = 70.dp, y = (-20).dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.planeta2),
                 contentDescription = "Saturn picture",
-                contentScale = ContentScale.None
+                contentScale = ContentScale.Fit
             )
         }
 
@@ -102,6 +132,24 @@ fun AboutMe(navController: NavController) {
             item { BackgroundBox() }
             item { ValuesBox() }
         }
+
+        for ((x, y) in starPositions) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.BottomStart)
+                    .offset(x = x.dp, y = y.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.star),
+                    contentDescription = "small white stars",
+                    modifier = Modifier
+                        .width(22.dp)
+                        .height(10.22593.dp)
+                )
+            }
+        }
+
 
         // Cuando se pulse sobre este botón, se mostrará NavigationBar()
         MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
@@ -163,17 +211,17 @@ fun TargetsBox() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image( // La imagen se muestra arriba del todo
+        Image( // La imagen se muestra arriba
             painter = painterResource(id = R.drawable.objetivos),
             contentDescription = "A guy on a Rocket",
             modifier = Modifier
                 .size(120.dp)
                 .width(119.dp)
                 .height(220.dp)
-                .offset(y = (80).dp)
+                .offset(y = (85).dp)
         )
 
-        Text( // El texto se muestra entre la caja y la imagen
+        Text(
             text = "OBJETIVOS",
             style = TextStyle(
                 fontSize = 25.76.sp,
@@ -190,12 +238,12 @@ fun TargetsBox() {
                 .offset(y = 85.dp)
         )
 
-        Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
+        Box(
             modifier = Modifier
                 .padding(horizontal = 50.dp)
-                .width(274.dp)
-                .height(475.dp)
-                .offset( y = 90.dp)
+                .width(285.dp)
+                .height(500.dp)
+                .offset(y = 90.dp)
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(Color(0xFF48194D), Color(0x8A221A47)),
@@ -215,6 +263,46 @@ fun TargetsBox() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxSize()
             ) {
+                Text(
+                    text = "Agus como desarrollado no solo se centra en la construcción de " +
+                            "aplicaciones.",
+                    style = TextStyle(
+                        fontSize = 15.sp,
+                        fontFamily = FontFamily(Font(R.font.interbold)),
+                        fontWeight = FontWeight(700),
+                        color = Color(0xFFFFFFFF),
+                    ),
+                    modifier = Modifier
+                        .padding(top = 35.dp, bottom = 10.dp)
+                        .width(248.dp)
+                        .offset(y = (-20).dp)
+
+                )
+                Text(
+                    text = "Uno de los principales objetivos de Agus es seguir evolucionando como " +
+                            "profesional integral. Su decisión de titularse como Desarrollador de " +
+                            "Aplicaciones Multiplataforma en 2022 es un testimonio de su compromiso" +
+                            " con la excelencia y su deseo de abordar proyectos desde una " +
+                            "perspectiva más holística. \nBusca no solo comprender profundamente el" +
+                            " desarrollo de software en sí, sino también la interconexión de" +
+                            " plataformas.\nBusca constantemente maneras de aplicar nuevas " +
+                            "tecnologías y enfoques para resolver problemas y mejorar la eficiencia" +
+                            " en el desarrollo de software. Su participación en proyectos de " +
+                            "automatización de procesos con Python y en entornos .NET demuestra su " +
+                            "disposición a explorar y adoptar nuevas herramientas y marcos de " +
+                            "trabajo.\n",
+                    style = TextStyle(
+                        fontSize = 14.sp,
+                        fontFamily = FontFamily(Font(R.font.inter)),
+                        fontWeight = FontWeight(700),
+                        color = Color(0xFFFFFFFF),
+                        textAlign = TextAlign.Justify,
+                    ),
+                    modifier = Modifier
+                        .width(245.dp)
+                        .height(400.dp)
+                        .offset(y = -20.dp)
+                )
             }
         }
     }
@@ -232,12 +320,12 @@ fun BackgroundBox() {
     ) {
         Image( // La imagen se muestra arriba del todo
             painter = painterResource(id = R.drawable.trayectoria),
-            contentDescription = "A guy on a Rocket",
+            contentDescription = "A flying guy",
             modifier = Modifier
                 .size(120.dp)
                 .width(119.dp)
                 .height(220.dp)
-                .offset(y = (80).dp)
+                .offset(x = 10.dp, y = (85).dp)
         )
 
         Text( // El texto se muestra entre la caja y la imagen
@@ -260,8 +348,8 @@ fun BackgroundBox() {
         Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
             modifier = Modifier
                 .padding(horizontal = 50.dp)
-                .width(274.dp)
-                .height(475.dp)
+                .width(285.dp)
+                .height(500.dp)
                 .offset(y = 90.dp)
                 .background(
                     brush = Brush.verticalGradient(
@@ -282,6 +370,51 @@ fun BackgroundBox() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxSize()
             ) {
+                Text(
+                    text = "Agus Rodríguez es un programador gaditano con experiencia Full-Stack",
+                    style = TextStyle(
+                        fontSize = 15.sp,
+                        fontFamily = FontFamily(Font(R.font.interbold)),
+                        fontWeight = FontWeight(700),
+                        color = Color(0xFFFFFFFF),
+                        textAlign = TextAlign.Justify,
+                    ),
+                    modifier = Modifier
+                        .padding(top = 30.dp, bottom = 10.dp)
+                        .width(248.dp)
+                        .offset(y = (-20).dp)
+                )
+                Text(
+                    text = "En 2010 comienza su formación en Programación en Cádiz, donde destacó" +
+                            " al realizar su primer proyecto como SQL Developer. Alternó su " +
+                            "formación con proyectos independientes y trabajos para terceros " +
+                            "hasta 2013, donde salta a la formación reglada con proyectos ofrecidos" +
+                            " por la Fundación estatal para el empleo como Automatización de " +
+                            "procesos con Python y trabajos con Google cloud. En 2014 participa en" +
+                            " proyectos de soporte técnico e infraestructura web que lo llevan a" +
+                            " desplazarse a Madrid, colaborando así con empresas como Indra e " +
+                            "Inditex. En 2016 se establece en Sevilla donde participa desarrolla " +
+                            "en entornos .NET durante tres años consecutivos.",
+                    style = TextStyle(
+                        fontSize = 14.sp,
+                        fontFamily = FontFamily(Font(R.font.inter)),
+                        fontWeight = FontWeight(700),
+                        color = Color(0xFFFFFFFF),
+                        textAlign = TextAlign.Justify,
+                    ),
+                    modifier = Modifier
+                        .width(245.dp)
+                        .height(400.dp)
+                        .offset(y = (-10).dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.arrowgood),
+                    contentDescription = "A yellow arrow",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .height(40.dp)
+                )
             }
         }
     }
@@ -327,8 +460,8 @@ fun ValuesBox() {
         Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
             modifier = Modifier
                 .padding(horizontal = 50.dp)
-                .width(274.dp)
-                .height(475.dp)
+                .width(285.dp)
+                .height(500.dp)
                 .offset(y = 90.dp)
                 .background(
                     brush = Brush.verticalGradient(
@@ -349,6 +482,51 @@ fun ValuesBox() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxSize()
             ) {
+                Text(
+                    text = "Agus Rodríguez es un profesional cuyos valores fundamentales han guiado su camino",
+                    style = TextStyle(
+                        fontSize = 15.sp,
+                        fontFamily = FontFamily(Font(R.font.interbold)),
+                        fontWeight = FontWeight(700),
+                        color = Color(0xFFFFFFFF),
+                    ),
+                    modifier = Modifier
+                        .padding(top = 30.dp, bottom = 10.dp)
+                        .width(248.dp)
+                        .offset(y = (-20).dp)
+                )
+                Text(
+                    text = "La integridad y la dedicación son pilares esenciales que han marcado su" +
+                            " enfoque en cada proyecto y colaboración a lo largo de los años. La " +
+                            "transparencia y la ética son valores fundamentales. Siendo consciente" +
+                            " de la responsabilidad que conlleva el desarrollo de software, se " +
+                            "esfuerza por mantener la claridad en todas las etapas del proceso." +
+                            " Desde el diseño inicial hasta la implementación y el mantenimiento," +
+                            " busca la transparencia y la honestidad para construir soluciones " +
+                            "tecnológicas robustas y confiables. Esta perseverancia se traduce en " +
+                            "una mentalidad de aprendizaje continuo, buscando siempre expandir sus " +
+                            "conocimientos y mantenerse al día con las últimas tendencias " +
+                            "tecnológicas.",
+                    style = TextStyle(
+                        fontSize = 14.sp,
+                        fontFamily = FontFamily(Font(R.font.inter)),
+                        fontWeight = FontWeight(700),
+                        color = Color(0xFFFFFFFF),
+                        textAlign = TextAlign.Justify,
+                    ),
+                    modifier = Modifier
+                        .width(245.dp)
+                        .height(400.dp)
+                        .offset(y = (-20).dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.arrowgoodinv),
+                    contentDescription = "A yellow arrow",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .height(40.dp)
+                )
             }
         }
     }

@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
@@ -203,35 +204,62 @@ fun ProjectsStatusBar() {
 @Composable
 fun PythonCard() {
     val image: Painter = painterResource(id = R.drawable.proyectopython)
-    Card(
-        shape = RoundedCornerShape(6.dp),
-        modifier = Modifier
-            .padding(horizontal = 100.dp),
-        backgroundColor = Color.Transparent
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha)
+
+    Column(
+        modifier = Modifier.padding(horizontal = 100.dp),
+        verticalArrangement = Arrangement.Center
     ) {
+        Card(
+            shape = RoundedCornerShape(6.dp),
+            backgroundColor = Color.Transparent
+        ) {
+            Image(
+                painter = image,
+                contentDescription = "Python Projects Card",
+                contentScale = ContentScale.Crop
+            )
+        }
+
         Image(
-            painter = image,
-            contentDescription = "My Python Projects",
-            contentScale = ContentScale.Crop
+            painter = arrow,
+            contentDescription = "Arrow",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .height(40.dp)
         )
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
 fun FigmaCard(){
     val image: Painter = painterResource(id = R.drawable.proyectoopochat)
-    Card(
-        shape = RoundedCornerShape(6.dp),
-        modifier = Modifier
-                .padding(horizontal = 100.dp),
-        backgroundColor = Color.Transparent
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+
+    Column(
+        modifier = Modifier.padding(horizontal = 100.dp),
+        verticalArrangement = Arrangement.Center
     ) {
+        Card(
+            shape = RoundedCornerShape(6.dp),
+            backgroundColor = Color.Transparent
+        ) {
+            Image(
+                painter = image,
+                contentDescription = "Figma Projects Card",
+                contentScale = ContentScale.Crop
+            )
+        }
+
         Image(
-            painter = image,
-            contentDescription = "Figma Projects Card",
-            contentScale = ContentScale.Crop
+            painter = arrow,
+            contentDescription = "Arrow",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .height(40.dp)
         )
     }
 }
@@ -240,16 +268,30 @@ fun FigmaCard(){
 @Composable
 fun BdCard() {
     val image: Painter = painterResource(id = R.drawable.proyectobd)
-    Card(
-        shape = RoundedCornerShape(6.dp),
-        modifier = Modifier
-                .padding(horizontal = 100.dp),
-        backgroundColor = Color.Transparent
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+
+    Column(
+        modifier = Modifier.padding(horizontal = 100.dp),
+        verticalArrangement = Arrangement.Center
     ) {
+        Card(
+            shape = RoundedCornerShape(6.dp),
+            backgroundColor = Color.Transparent
+        ) {
+            Image(
+                painter = image,
+                contentDescription = "DB Projects Card",
+                contentScale = ContentScale.Crop
+            )
+        }
+
         Image(
-            painter = image,
-            contentDescription = "DB Projects Card",
-            contentScale = ContentScale.Crop
+            painter = arrow,
+            contentDescription = "Arrow",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .height(40.dp)
         )
     }
 }
@@ -258,16 +300,30 @@ fun BdCard() {
 @Composable
 fun ComposeCard(){
     val image: Painter = painterResource(id = R.drawable.proyectocompose)
-    Card(
-        shape = RoundedCornerShape(6.dp),
-        modifier = Modifier
-            .padding(horizontal = 100.dp),
-        backgroundColor = Color.Transparent
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+
+    Column(
+        modifier = Modifier.padding(horizontal = 100.dp),
+        verticalArrangement = Arrangement.Center
     ) {
+        Card(
+            shape = RoundedCornerShape(6.dp),
+            backgroundColor = Color.Transparent
+        ) {
+            Image(
+                painter = image,
+                contentDescription = "Compose Projects Card",
+                contentScale = ContentScale.Crop
+            )
+        }
+
         Image(
-            painter = image,
-            contentDescription = "Compose Projects Card",
-            contentScale = ContentScale.Crop
+            painter = arrow,
+            contentDescription = "Arrow",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .height(40.dp)
         )
     }
 }
@@ -276,16 +332,30 @@ fun ComposeCard(){
 @Composable
 fun ErpCard() {
     val image: Painter = painterResource(id = R.drawable.proyectoerp)
-    Card(
-        shape = RoundedCornerShape(6.dp),
-        modifier = Modifier
-            .padding(horizontal = 100.dp),
-        backgroundColor = Color.Transparent
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+
+    Column(
+        modifier = Modifier.padding(horizontal = 100.dp),
+        verticalArrangement = Arrangement.Center
     ) {
+        Card(
+            shape = RoundedCornerShape(6.dp),
+            backgroundColor = Color.Transparent
+        ) {
+            Image(
+                painter = image,
+                contentDescription = "ERP Projects Card",
+                contentScale = ContentScale.Crop
+            )
+        }
+
         Image(
-            painter = image,
-            contentDescription = "ERP Projects Card",
-            contentScale = ContentScale.Crop
+            painter = arrow,
+            contentDescription = "Arrow",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .height(40.dp)
         )
     }
 }
@@ -294,16 +364,30 @@ fun ErpCard() {
 @Composable
 fun UnityCard(){
     val image: Painter = painterResource(id = R.drawable.proyectounity)
-    Card(
-        shape = RoundedCornerShape(6.dp),
-        modifier = Modifier
-            .padding(horizontal = 100.dp),
-        backgroundColor = Color.Transparent
+    val arrow: Painter = painterResource(id = R.drawable.coheteflechareves)
+
+    Column(
+        modifier = Modifier.padding(horizontal = 100.dp),
+        verticalArrangement = Arrangement.Center
     ) {
+        Card(
+            shape = RoundedCornerShape(6.dp),
+            backgroundColor = Color.Transparent
+        ) {
+            Image(
+                painter = image,
+                contentDescription = "Unity Projects Card",
+                contentScale = ContentScale.Crop
+            )
+        }
+
         Image(
-            painter = image,
-            contentDescription = "Unity Projects Card",
-            contentScale = ContentScale.Crop
+            painter = arrow,
+            contentDescription = "Arrow",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .height(40.dp)
         )
     }
 }
