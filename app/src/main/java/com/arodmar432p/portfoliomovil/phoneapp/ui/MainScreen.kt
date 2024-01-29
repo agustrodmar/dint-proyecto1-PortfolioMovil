@@ -63,7 +63,8 @@ fun MainScreen(navController: NavController) {
             .fillMaxSize()
             .background(
                 brush = Brush.verticalGradient(
-                    colors = listOf(Color(0xFF000000), Color(0xFF000000), Color(0xFF2F254C)),
+                    colors = listOf(Color(0xFF000000), Color(0xFF000000),
+                        Color(0xFF000000), Color(0xFF2F254C)),
                     startY = 0.0f,
                     endY = Float.POSITIVE_INFINITY
                 )
@@ -83,6 +84,82 @@ fun MainScreen(navController: NavController) {
                 .width(190.dp)
                 .height(134.dp)
                 .offset(y = (-40).dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.es),
+            contentDescription = "Spanish flag",
+            modifier = Modifier
+                .height(25.dp)
+                .width(25.dp)
+                .offset(x = (-65).dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.deutsch),
+            contentDescription = "Deutschland flag",
+            modifier = Modifier
+                .height(25.dp)
+                .width(25.dp)
+                .offset(x = (65).dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.us),
+            contentDescription = "US flag",
+            modifier = Modifier
+                .height(25.dp)
+                .width(25.dp)
+                .offset()
+        )
+        Image(
+            painter = painterResource(id = R.drawable.es),
+            contentDescription = "Spanish flag",
+            modifier = Modifier
+                .height(25.dp)
+                .width(25.dp)
+                .offset(x = (-65).dp)
+        )
+
+        Text(
+            text = "Codewars",
+            style = TextStyle(
+                fontSize = 11.sp,
+                fontFamily = FontFamily(Font(R.font.interbold)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(134.dp)
+                .offset(x = (-75).dp,y = (90).dp)
+        )
+        Text(
+            text = "Github",
+            style = TextStyle(
+                fontSize = 11.sp,
+                fontFamily = FontFamily(Font(R.font.interbold)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(134.dp)
+                .offset(x = (0).dp,y = (90).dp)
+        )
+
+        Text(
+            text = "Linkedin",
+            style = TextStyle(
+                fontSize = 11.sp,
+                fontFamily = FontFamily(Font(R.font.interbold)),
+                fontWeight = FontWeight(400),
+                color = Color(0xFFFFFFFF),
+                textAlign = TextAlign.Center,
+            ),
+            modifier = Modifier
+                .width(190.dp)
+                .height(134.dp)
+                .offset(x = (75).dp,y = (90).dp)
         )
 
         for ((x, y) in starPositions) {
