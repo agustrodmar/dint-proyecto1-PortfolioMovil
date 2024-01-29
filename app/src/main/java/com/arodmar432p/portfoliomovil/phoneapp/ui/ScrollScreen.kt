@@ -1,6 +1,5 @@
 package com.arodmar432p.portfoliomovil.phoneapp.ui
 
-import android.media.tv.TvContract.PreviewPrograms
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset

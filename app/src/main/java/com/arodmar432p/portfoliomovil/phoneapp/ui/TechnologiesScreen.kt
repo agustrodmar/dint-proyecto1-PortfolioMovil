@@ -393,7 +393,7 @@ fun Background() {
                 .width(40.dp)
                 .height(200.dp)
                 .align(Alignment.BottomStart)
-                .offset(x = -20.dp, y = 40.dp)
+                .offset(x = (-20).dp, y = 40.dp)
                 .padding(start = 20.dp, bottom = 120.dp)
         )
     }

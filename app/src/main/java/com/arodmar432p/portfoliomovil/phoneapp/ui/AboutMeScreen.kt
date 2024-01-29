@@ -308,7 +308,7 @@ fun TargetsBox() {
                     modifier = Modifier
                         .width(245.dp)
                         .height(400.dp)
-                        .offset(y = -20.dp)
+                        .offset(y = (-20).dp)
                 )
             }
         }

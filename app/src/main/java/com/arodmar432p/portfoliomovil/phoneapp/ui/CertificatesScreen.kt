@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil.compose.ImagePainter.State.Empty.painter
 import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -48,10 +49,6 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 fun CertificatesScreen(navController: NavController) {
     // Estado para controlar si se muestra o no la barra de navegación
     var showNavigationBar by remember { mutableStateOf(false) }
-
-    val configuration = LocalConfiguration.current
-    val screenWidth = configuration.screenWidthDp
-    val screenHeight = configuration.screenHeightDp
 
     CertificatesBackground()
 
@@ -207,65 +204,109 @@ fun CertificatesStatusBar() {
     }
 }
 
+@Preview
 @Composable
 fun PythonCertificate(){
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp
 
-    val image: Painter = painterResource(id = R.drawable.pythoncertificate)
-    Image(
-        painter = image,
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ){
+        Image(
+        painter = painterResource(id = R.drawable.pythoncertificate),
         contentDescription = "Python Certificate Card",
         modifier = Modifier
-            .padding( horizontal = (screenWidth * 0.225).dp)
+            .padding(horizontal = (screenWidth * 0.225).dp)
             .size((screenWidth * 0.55).dp)
     )
+        Image(painter = painterResource(id = R.drawable.coheteflecha),
+            contentDescription = "A rocket working as an arrow",
+            modifier = Modifier
+                .size(35.dp)
+                .offset(x = 315.dp, y = 90.dp)
+        )
+    }
 }
 
+@Preview
 @Composable
 fun CsharpCertificate(){
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp
 
-    val image: Painter = painterResource(id = R.drawable.csharpcertificate)
-    Image(
-        painter = image,
-        contentDescription = "C# Cerificate Card",
+    Box(
         modifier = Modifier
-            .padding( horizontal = (screenWidth * 0.25).dp)
-            .size((screenWidth * 0.55).dp)
-    )
+            .fillMaxSize() // A modificar si se desean añadir más cosas en la screen a futuro.
+    ){
+        Image(
+            painter = painterResource(id = R.drawable.csharpcertificate),
+            contentDescription = "C# Certificate Card",
+            modifier = Modifier
+                .padding(horizontal = (screenWidth * 0.225).dp)
+                .size((screenWidth * 0.55).dp)
+        )
+        Image(painter = painterResource(id = R.drawable.coheteflechareves),
+            contentDescription = "A rocket working as an arrow",
+            modifier = Modifier
+                .size(35.dp)
+                .offset(x = 15.dp, y = 90.dp)
+        )
+    }
 }
 
-
+@Preview
 @Composable
 fun MySqlCertificate(){
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp
 
-    val image: Painter = painterResource(id = R.drawable.mysqlcertificate)
-    Image(
-        painter = image,
-        contentDescription = "MySQL Certificate Card",
+    Box(
         modifier = Modifier
-            .padding( horizontal = (screenWidth * 0.25).dp)
-            .size((screenWidth * 0.55).dp)
-    )
+            .fillMaxSize() // A modificar si se desean añadir más cosas en la screen a futuro.
+    ){
+        Image(
+            painter = painterResource(id = R.drawable.mysqlcertificate),
+            contentDescription = "MySQL Certificate Card",
+            modifier = Modifier
+                .padding(horizontal = (screenWidth * 0.225).dp)
+                .size((screenWidth * 0.55).dp)
+        )
+        Image(painter = painterResource(id = R.drawable.coheteflecha),
+            contentDescription = "A rocket working as an arrow",
+            modifier = Modifier
+                .size(35.dp)
+                .offset(x = 315.dp, y = 90.dp)
+        )
+    }
 }
 
+
+@Preview
 @Composable
 fun JavaCertificate(){
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp
 
-    val image: Painter = painterResource(id = R.drawable.pythoncertificate)
-    Image(
-        painter = image,
-        contentDescription = "Java 8 Certificate Card",
+    Box(
         modifier = Modifier
-            .padding( horizontal = (screenWidth * 0.25).dp)
-            .size((screenWidth * 0.55).dp)
-    )
+            .fillMaxSize() // A modificar si se desean añadir más cosas en la screen a futuro.
+    ){
+        Image(
+            painter = painterResource(id = R.drawable.javacertificate),
+            contentDescription = "Java Certificate Card",
+            modifier = Modifier
+                .padding(horizontal = (screenWidth * 0.225).dp)
+                .size((screenWidth * 0.55).dp)
+        )
+        Image(painter = painterResource(id = R.drawable.coheteflecha),
+            contentDescription = "A rocket working as an arrow",
+            modifier = Modifier
+                .size(35.dp)
+                .offset(x = 315.dp, y = 90.dp)
+        )
+    }
 }
 
 @Preview(showBackground = true)
