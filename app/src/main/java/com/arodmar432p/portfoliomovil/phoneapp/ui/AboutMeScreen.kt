@@ -101,6 +101,50 @@ fun AboutMeScreen(navController: NavController) {
                 .offset(x = (-20).dp, y = (110.dp))
         )
 
+        Image(
+            painter = painterResource(id = R.drawable.yellowstar),
+            contentDescription = "small yellow stars",
+            modifier = Modifier
+                .width(10.dp)
+                .height(10.dp)
+                .offset(x = 30.dp, y = (90).dp)
+        )
+
+        Image(
+            painter = painterResource(id = R.drawable.yellowstar),
+            contentDescription = "small yellow stars",
+            modifier = Modifier
+                .width(10.dp)
+                .height(10.dp)
+                .offset(x = 220.dp, y = (790).dp)
+        )
+
+        Image(
+            painter = painterResource(id = R.drawable.yellowstar),
+            contentDescription = "small yellow stars",
+            modifier = Modifier
+                .width(10.dp)
+                .height(10.dp)
+                .offset(x = 320.dp, y = (740).dp)
+        )
+
+        Image(
+            painter = painterResource(id = R.drawable.yellowstar),
+            contentDescription = "small yellow stars",
+            modifier = Modifier
+                .width(10.dp)
+                .height(10.dp)
+                .offset(x = 360.dp, y = (540).dp)
+        )
+        Image(
+            painter = painterResource(id = R.drawable.yellowstar),
+            contentDescription = "small yellow stars",
+            modifier = Modifier
+                .width(10.dp)
+                .height(10.dp)
+                .offset(x = 345.dp, y = (640).dp)
+        )
+
         Box(
             modifier = Modifier
                 .align(Alignment.BottomStart)
@@ -460,7 +504,7 @@ fun ValuesBox() {
             modifier = Modifier
                 .width(123.14343.dp)
                 .height(39.dp)
-                .offset(y = (125).dp)
+                .offset(y = (130).dp)
         )
 
         Image(painter = painterResource(id = R.drawable.coheteflechareves),
