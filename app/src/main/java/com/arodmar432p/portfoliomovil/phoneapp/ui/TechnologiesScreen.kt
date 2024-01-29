@@ -1,6 +1,5 @@
 package com.arodmar432p.portfoliomovil.phoneapp.ui
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -46,7 +45,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
  */
 
 @Composable
-fun Technologies(navController: NavController) {
+fun TechnologiesScreen(navController: NavController) {
     // Estado para controlar si se muestra o no la barra de navegación
     var showNavigationBar by remember { mutableStateOf(false) }
 
@@ -569,6 +568,6 @@ fun TechnologiesStatusBar() {
 @Composable
 fun PreviewTechnologies() {
     val navController = rememberNavController()
-    Technologies(navController)
+    TechnologiesScreen(navController)
 }
 

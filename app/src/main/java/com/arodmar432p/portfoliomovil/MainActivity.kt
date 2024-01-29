@@ -13,13 +13,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.phoneapp.data.ScreenNavigation
-import com.arodmar432p.portfoliomovil.phoneapp.ui.AboutMe
-import com.arodmar432p.portfoliomovil.phoneapp.ui.Certificates
+import com.arodmar432p.portfoliomovil.phoneapp.ui.AboutMeScreen
+import com.arodmar432p.portfoliomovil.phoneapp.ui.CertificatesScreen
 import com.arodmar432p.portfoliomovil.phoneapp.ui.ContactScreen
 import com.arodmar432p.portfoliomovil.ui.theme.PortfolioMovilTheme
 import com.arodmar432p.portfoliomovil.phoneapp.ui.MainScreen
-import com.arodmar432p.portfoliomovil.phoneapp.ui.Projects
-import com.arodmar432p.portfoliomovil.phoneapp.ui.Technologies
+import com.arodmar432p.portfoliomovil.phoneapp.ui.ProjectsScreen
+import com.arodmar432p.portfoliomovil.phoneapp.ui.TechnologiesScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,16 +41,16 @@ class MainActivity : ComponentActivity() {
                             MainScreen(navController)
                         }
                         composable(ScreenNavigation.AboutMeScreen.route) {
-                            AboutMe(navController)
+                            AboutMeScreen(navController)
                         }
                         composable(ScreenNavigation.CertificatesScreen.route) {
-                            Certificates(navController)
+                            CertificatesScreen(navController)
                         }
                         composable(ScreenNavigation.TechnologiesScreen.route) {
-                            Technologies(navController)
+                            TechnologiesScreen(navController)
                         }
                         composable(ScreenNavigation.ProjectScreen.route) {
-                            Projects(navController)
+                            ProjectsScreen(navController)
                         }
                         composable(ScreenNavigation.ContactScreen.route) {
                             ContactScreen(navController)

@@ -58,7 +58,6 @@ fun ContactScreen(navController: NavController) {
     ContactScreenBackground()
 
     // Cuando se pulse sobre este botón, se mostrará NavigationBar()
-    // Cuando se pulse sobre este botón, se mostrará NavigationBar()
     MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenunegro)
 
     ContactStatusBar()
@@ -342,7 +341,7 @@ fun ContactMenu() {
                     .width(width * 0.55f)
                     .height(height * 0.2f)
                     .background(Color.White)
-                    .background(color = Color(0xFFFFFF), shape = RoundedCornerShape(size = 20.dp)),
+                    .background(color = Color(0xFFFFFFFF), shape = RoundedCornerShape(size = 20.dp)),
                 label = {},
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = Color.Transparent,

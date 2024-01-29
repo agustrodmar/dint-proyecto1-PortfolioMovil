@@ -127,6 +127,7 @@ fun MainScreen(navController: NavController) {
                         contentAlignment = Alignment.TopStart
                     ) {
                         NavigationBar(navController)
+                        //ScrollScreen() Por si quisiera activar el scroll más adelante
                     }
                 }
             }

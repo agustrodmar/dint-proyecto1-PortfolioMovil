@@ -45,7 +45,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
  * La composable principal de esta screen
  */
 @Composable
-fun Certificates(navController: NavController) {
+fun CertificatesScreen(navController: NavController) {
     // Estado para controlar si se muestra o no la barra de navegación
     var showNavigationBar by remember { mutableStateOf(false) }
 
@@ -272,5 +272,5 @@ fun JavaCertificate(){
 @Composable
 fun PreviewCertificates() {
     val navController = rememberNavController()
-    Certificates(navController)
+    CertificatesScreen(navController)
 }

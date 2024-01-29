@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -39,15 +38,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import androidx.compose.material.Card
-import androidx.compose.ui.platform.LocalConfiguration
+import androidx.navigation.compose.rememberNavController
 
 
 @Composable
-fun Projects(navController: NavController) {
+fun ProjectsScreen(navController: NavController) {
     // Estado para controlar si se muestra o no la barra de navegación
     var showNavigationBar by remember { mutableStateOf(false) }
 
@@ -388,4 +386,11 @@ fun UnityCard(){
                 .height(40.dp)
         )
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewCProjects() {
+    val navController = rememberNavController()
+    ProjectsScreen(navController)
 }

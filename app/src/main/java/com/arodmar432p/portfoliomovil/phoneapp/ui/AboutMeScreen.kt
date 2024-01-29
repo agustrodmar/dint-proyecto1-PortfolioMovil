@@ -44,7 +44,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
-fun AboutMe(navController: NavController) {
+fun AboutMeScreen(navController: NavController) {
     // Estado para controlar si se muestra o no la barra de navegación
     var showNavigationBar by remember { mutableStateOf(false) }
 
@@ -198,7 +198,7 @@ fun AboutStatusBar() {
 @Composable
 fun PreviewAboutMe() {
     val navController = rememberNavController()
-    AboutMe(navController)
+    AboutMeScreen(navController)
 }
 
 @Preview(showBackground = true)
@@ -218,7 +218,7 @@ fun TargetsBox() {
                 .size(120.dp)
                 .width(119.dp)
                 .height(220.dp)
-                .offset(y = (85).dp)
+                .offset(y = (135).dp)
         )
 
         Text(
@@ -235,9 +235,16 @@ fun TargetsBox() {
             modifier = Modifier
                 .width(123.14343.dp)
                 .height(39.dp)
-                .offset(y = 85.dp)
+                .offset(y = 125.dp)
         )
 
+        Image(painter = painterResource(id = R.drawable.coheteflecha),
+            contentDescription = "A rocket working as an arrow",
+            modifier = Modifier
+                .size(35.dp)
+                .offset(x = 170.dp, y = 350.dp )
+
+        )
         Box(
             modifier = Modifier
                 .padding(horizontal = 50.dp)
@@ -325,7 +332,7 @@ fun BackgroundBox() {
                 .size(120.dp)
                 .width(119.dp)
                 .height(220.dp)
-                .offset(x = 10.dp, y = (85).dp)
+                .offset(x = 10.dp, y = (135).dp)
         )
 
         Text( // El texto se muestra entre la caja y la imagen
@@ -342,7 +349,14 @@ fun BackgroundBox() {
             modifier = Modifier
                 .width(123.14343.dp)
                 .height(39.dp)
-                .offset(y = (85).dp)
+                .offset(y = (125).dp)
+        )
+
+        Image(painter = painterResource(id = R.drawable.coheteflecha),
+            contentDescription = "A rocket working as an arrow",
+            modifier = Modifier
+                .size(35.dp)
+                .offset(x = 170.dp, y = 350.dp )
         )
 
         Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
@@ -407,14 +421,6 @@ fun BackgroundBox() {
                         .height(400.dp)
                         .offset(y = (-10).dp)
                 )
-
-                Image(
-                    painter = painterResource(id = R.drawable.arrowgood),
-                    contentDescription = "A yellow arrow",
-                    contentScale = ContentScale.Fit,
-                    modifier = Modifier
-                        .height(40.dp)
-                )
             }
         }
     }
@@ -437,7 +443,7 @@ fun ValuesBox() {
                 .size(120.dp)
                 .width(119.dp)
                 .height(220.dp)
-                .offset(y = (80).dp)
+                .offset(y = (135).dp)
         )
 
         Text( // El texto se muestra entre la caja y la imagen
@@ -454,7 +460,14 @@ fun ValuesBox() {
             modifier = Modifier
                 .width(123.14343.dp)
                 .height(39.dp)
-                .offset(y = (85).dp)
+                .offset(y = (125).dp)
+        )
+
+        Image(painter = painterResource(id = R.drawable.coheteflechareves),
+            contentDescription = "A rocket working as an arrow",
+            modifier = Modifier
+                .size(35.dp)
+                .offset(x = (-165).dp, y = 350.dp )
         )
 
         Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
