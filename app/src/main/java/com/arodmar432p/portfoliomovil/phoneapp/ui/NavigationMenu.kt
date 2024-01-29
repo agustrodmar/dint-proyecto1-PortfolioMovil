@@ -34,6 +34,13 @@ import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.arodmar432p.portfoliomovil.phoneapp.data.ScreenNavigation
 
+
+/**
+ * A composable function that displays menu dots.
+ *
+ * @param onClick The action to perform when the menu dots are clicked.
+ * @param drawableId The ID of the drawable resource.
+ */
 @Composable
 fun MenuDots(onClick: () -> Unit, drawableId: Int) {
     Box(
@@ -58,6 +65,12 @@ fun MenuDots(onClick: () -> Unit, drawableId: Int) {
     }
 }
 
+
+/**
+ * A composable function that displays the navigation bar.
+ *
+ * @param navController The NavController used for navigation.
+ */
 @Composable
 fun NavigationBar(navController: NavController) {
     Box(
@@ -231,7 +244,9 @@ fun NavigationBar(navController: NavController) {
     }
 }
 
-
+/**
+ * A preview function for NavigationMenu.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PreviewNavigationMenu() {

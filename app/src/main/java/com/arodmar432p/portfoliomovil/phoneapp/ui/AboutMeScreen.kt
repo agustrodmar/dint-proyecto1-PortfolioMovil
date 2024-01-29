@@ -43,17 +43,21 @@ import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
+/**
+ * A composable function that displays the AboutMeScreen.
+ *
+ * @param navController The NavController used for navigation.
+ */
 @Composable
 fun AboutMeScreen(navController: NavController) {
-    // Estado para controlar si se muestra o no la barra de navegación
+    // State to control whether the navigation bar is shown or not
     var showNavigationBar by remember { mutableStateOf(false) }
 
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp
     val screenHeight = configuration.screenHeightDp
 
-    // Defino las estrellas en posiciones por la parte inferior
-    // de la pantalla
+    // Define the stars in positions at the bottom of the screen
     val starPositions = remember { listOf(
         Pair(0.07f, 0.85f),
         Pair(0.85f, 0.21f),
@@ -195,13 +199,13 @@ fun AboutMeScreen(navController: NavController) {
         }
 
 
-        // Cuando se pulse sobre este botón, se mostrará NavigationBar()
+        // To display NavigationBar()
         MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
 
         AboutStatusBar()
 
 
-        // Si showNavigationBar es true, se muestra la barra de navegación
+        // if showNavigationBar is true, it shows navigation Bar
         if (showNavigationBar) {
             Box(
                 modifier = Modifier
@@ -225,19 +229,25 @@ fun AboutMeScreen(navController: NavController) {
 }
 
 
+/**
+ * A composable function that sets the status bar color.
+ */
 @Composable
 fun AboutStatusBar() {
-    // Obtiene una referencia a SystemUiController
+    // Gets a reference to SystemUiController
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
-        // Establece el color de la barra de estado y los íconos
+        // Sets the status bar color and icons
         systemUiController.setStatusBarColor(
             color = Color(0xFF2F254C),
         )
     }
 }
 
+/**
+ * A preview function for AboutMeScreen.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PreviewAboutMe() {
@@ -245,6 +255,10 @@ fun PreviewAboutMe() {
     AboutMeScreen(navController)
 }
 
+
+/**
+ * A composable function that displays a box with targets.
+ */
 @Preview(showBackground = true)
 @Composable
 fun TargetsBox() {
@@ -301,12 +315,12 @@ fun TargetsBox() {
                         startY = 0.0f,
                         endY = Float.POSITIVE_INFINITY
                     ),
-                    shape = RoundedCornerShape(1.dp) // Ajustar este valor para cambiar la redondez de las esquinas
+                    shape = RoundedCornerShape(1.dp)
                 )
                 .border(
                     width = 2.dp,
                     color = Color(0xFF7C1DF5),
-                    shape = RoundedCornerShape(10.dp) // la forma del borde me debe coincidir con la forma del fondo
+                    shape = RoundedCornerShape(10.dp)
                 )
         ) {
             Column(
@@ -359,6 +373,9 @@ fun TargetsBox() {
     }
 }
 
+/**
+ * A composable function that displays a box with a background.
+ */
 @Preview(showBackground = true)
 @Composable
 fun BackgroundBox() {
@@ -369,7 +386,7 @@ fun BackgroundBox() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image( // La imagen se muestra arriba del todo
+        Image(
             painter = painterResource(id = R.drawable.trayectoria),
             contentDescription = "A flying guy",
             modifier = Modifier
@@ -379,7 +396,7 @@ fun BackgroundBox() {
                 .offset(x = 10.dp, y = (135).dp)
         )
 
-        Text( // El texto se muestra entre la caja y la imagen
+        Text(
             text = "TRAYECTORIA",
             style = TextStyle(
                 fontSize = 25.76.sp,
@@ -403,7 +420,7 @@ fun BackgroundBox() {
                 .offset(x = 170.dp, y = 350.dp )
         )
 
-        Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
+        Box(
             modifier = Modifier
                 .padding(horizontal = 50.dp)
                 .width(285.dp)
@@ -415,12 +432,12 @@ fun BackgroundBox() {
                         startY = 0.0f,
                         endY = Float.POSITIVE_INFINITY
                     ),
-                    shape = RoundedCornerShape(1.dp) // Ajustar este valor para cambiar la redondez de las esquinas
+                    shape = RoundedCornerShape(1.dp)
                 )
                 .border(
                     width = 2.dp,
                     color = Color(0xFF7C1DF5),
-                    shape = RoundedCornerShape(10.dp) // la forma del borde me debe coincidir con la forma del fondo
+                    shape = RoundedCornerShape(10.dp)
                 )
         ) {
             Column(
@@ -470,6 +487,10 @@ fun BackgroundBox() {
     }
 }
 
+
+/**
+ * A composable function that displays a box with values.
+ */
 @Preview(showBackground = true)
 @Composable
 fun ValuesBox() {
@@ -490,7 +511,7 @@ fun ValuesBox() {
                 .offset(y = (135).dp)
         )
 
-        Text( // El texto se muestra entre la caja y la imagen
+        Text(
             text = "VALORES",
             style = TextStyle(
                 fontSize = 25.76.sp,
@@ -514,7 +535,7 @@ fun ValuesBox() {
                 .offset(x = (-165).dp, y = 350.dp )
         )
 
-        Box( // La caja se muestra debajo del texto objetivo, y bien en el centro
+        Box(
             modifier = Modifier
                 .padding(horizontal = 50.dp)
                 .width(285.dp)
@@ -526,12 +547,12 @@ fun ValuesBox() {
                         startY = 0.0f,
                         endY = Float.POSITIVE_INFINITY
                     ),
-                    shape = RoundedCornerShape(1.dp) // Ajustar este valor para cambiar la redondez de las esquinas
+                    shape = RoundedCornerShape(1.dp)
                 )
                 .border(
                     width = 2.dp,
                     color = Color(0xFF7C1DF5),
-                    shape = RoundedCornerShape(10.dp) // la forma del borde me debe coincidir con la forma del fondo
+                    shape = RoundedCornerShape(10.dp)
                 )
         ) {
             Column(

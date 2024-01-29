@@ -49,20 +49,24 @@ import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
-
+/**
+ * A composable function that displays the ContactScreen.
+ *
+ * @param navController The NavController used for navigation.
+ */
 @Composable
 fun ContactScreen(navController: NavController) {
-    // Estado para controlar si se muestra o no la barra de navegación
+
     var showNavigationBar by remember { mutableStateOf(false) }
 
     ContactScreenBackground()
 
-    // Cuando se pulse sobre este botón, se mostrará NavigationBar()
+
     MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenunegro)
 
     ContactStatusBar()
 
-    // Si showNavigationBar es true, se muestra la barra de navegación
+
     if (showNavigationBar) {
         Box(
             modifier = Modifier
@@ -84,26 +88,36 @@ fun ContactScreen(navController: NavController) {
     }
 }
 
+/**
+ * A composable function that sets the status bar color to black.
+ */
 @Composable
 fun ContactStatusBar() {
-    // Obtiene una referencia a SystemUiController
+
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
-        // Establece el color de la barra de estado y los íconos
+
         systemUiController.setStatusBarColor(
             color = Color(0xFF52F1FC)
         )
     }
 }
 
-
+/**
+ * A preview function for MainScreen.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PreviewContact() {
     val navController = rememberNavController()
     ContactScreen(navController)
 }
+
+
+/**
+ * A composable function that displays the background for the contact screen.
+ */
 
 @Composable
 fun ContactScreenBackground() {
@@ -278,6 +292,10 @@ fun ContactScreenBackground() {
     }
 }
 
+
+/**
+ * A preview function for ContactMenu.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable

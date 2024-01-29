@@ -44,19 +44,24 @@ import androidx.compose.material.Card
 import androidx.navigation.compose.rememberNavController
 
 
+/**
+ * A composable function that displays the ProjectsScreen.
+ *
+ * @param navController The NavController used for navigation.
+ */
 @Composable
 fun ProjectsScreen(navController: NavController) {
-    // Estado para controlar si se muestra o no la barra de navegación
+    // State to control whether the navigation bar is shown or not
     var showNavigationBar by remember { mutableStateOf(false) }
 
     ProjectsBackground()
 
-    // Cuando se pulse sobre este botón, se mostrará NavigationBar()
+
     MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
 
     ProjectsStatusBar()
 
-    // Si showNavigationBar es true, se muestra la barra de navegación
+
     if (showNavigationBar) {
         Box(
             modifier = Modifier
@@ -92,6 +97,9 @@ fun ProjectsScreen(navController: NavController) {
     }
 }
 
+/**
+ * A composable function that displays the background for the projects screen.
+ */
 @Composable
 fun ProjectsBackground(){
     Box(
@@ -183,6 +191,10 @@ fun ProjectsBackground(){
     }
 }
 
+
+/**
+ * A composable function that sets the status bar color for the projects screen.
+ */
 @Composable
 fun ProjectsStatusBar() {
     // Obtiene una referencia a SystemUiController
@@ -196,6 +208,10 @@ fun ProjectsStatusBar() {
     }
 }
 
+
+/**
+ * A preview function for PythonCard.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PythonCard() {
@@ -228,11 +244,14 @@ fun PythonCard() {
     }
 }
 
+/**
+ * A preview function for FigmaCard.
+ */
 @Preview(showBackground = true)
 @Composable
 fun FigmaCard(){
     val image: Painter = painterResource(id = R.drawable.proyectoopochat)
-    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha)
 
     Column(
         modifier = Modifier.padding(horizontal = 100.dp),
@@ -260,11 +279,15 @@ fun FigmaCard(){
     }
 }
 
+/**
+ * A preview function for BdCard.
+ */
+
 @Preview(showBackground = true)
 @Composable
 fun BdCard() {
     val image: Painter = painterResource(id = R.drawable.proyectobd)
-    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha)
 
     Column(
         modifier = Modifier.padding(horizontal = 100.dp),
@@ -292,11 +315,15 @@ fun BdCard() {
     }
 }
 
+
+/**
+ * A preview function for ComposeCard.
+ */
 @Preview(showBackground = true)
 @Composable
 fun ComposeCard(){
     val image: Painter = painterResource(id = R.drawable.proyectocompose)
-    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha)
 
     Column(
         modifier = Modifier.padding(horizontal = 100.dp),
@@ -324,11 +351,15 @@ fun ComposeCard(){
     }
 }
 
+
+/**
+ * A preview function for ErpCard.
+ */
 @Preview(showBackground = true)
 @Composable
 fun ErpCard() {
     val image: Painter = painterResource(id = R.drawable.proyectoerp)
-    val arrow: Painter = painterResource(id = R.drawable.coheteflecha) // Añade tu drawable de la flecha aquí
+    val arrow: Painter = painterResource(id = R.drawable.coheteflecha)
 
     Column(
         modifier = Modifier.padding(horizontal = 100.dp),
@@ -356,6 +387,9 @@ fun ErpCard() {
     }
 }
 
+/**
+ * A preview function for UnityCard.
+ */
 @Preview(showBackground = true)
 @Composable
 fun UnityCard(){

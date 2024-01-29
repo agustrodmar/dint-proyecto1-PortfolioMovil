@@ -44,20 +44,25 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
  * TODO: ENVIA EL DISEÑO A LOS USUARIOS PARA QUE LO TESTEEN: https://www.lyssna.com/
  */
 
+/**
+ * A composable function that displays the TechnologiesScreen.
+ *
+ * @param navController The NavController used for navigation.
+ */
 @Composable
 fun TechnologiesScreen(navController: NavController) {
-    // Estado para controlar si se muestra o no la barra de navegación
+    // State to control whether the navigation bar is shown or not
     var showNavigationBar by remember { mutableStateOf(false) }
 
-    Background()
+    TechnologiesScreenBackground()
     MainTechnologiesFrame()
 
-    // Cuando se pulse sobre este botón, se mostrará NavigationBar()
+    // When this button is clicked, NavigationBar() will be displayed
     MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
 
     TechnologiesStatusBar()
 
-    // Si showNavigationBar es true, se muestra la barra de navegación
+    // If showNavigationBar is true, the navigation bar is displayed
     if (showNavigationBar) {
         Box(
             modifier = Modifier
@@ -80,8 +85,12 @@ fun TechnologiesScreen(navController: NavController) {
     }
 }
 
+
+/**
+ * A composable function that displays the background for the technologies screen.
+ */
 @Composable
-fun Background() {
+fun TechnologiesScreenBackground() {
 
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp
@@ -132,7 +141,6 @@ fun Background() {
             )
         )
 
-        // Genero un segundo texto para formar una sombra sólida.
         Text(
             text = "TECNOLOGÍAS QUE USO",
             modifier = Modifier
@@ -149,7 +157,6 @@ fun Background() {
             )
         )
 
-        // TODO: Añadir los textos de las apps aquí
         Text(
             text = "JAVA",
             style = TextStyle(
@@ -399,8 +406,9 @@ fun Background() {
     }
 }
 
+
 /**
- * El marco en el que van a ir las tecnologías que voy a ir añadiendo.
+ * The frame where the technologies will be added.
  */
 @Composable
 fun MainTechnologiesFrame() {
@@ -550,13 +558,16 @@ fun MainTechnologiesFrame() {
     }
 }
 
+/**
+ * A composable function that sets the status bar color for the technologies screen.
+ */
 @Composable
 fun TechnologiesStatusBar() {
-    // Obtiene una referencia a SystemUiController
+    // Gets a reference to SystemUiController
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
-        // Establece el color de la barra de estado y los íconos
+        // Sets the status bar color and icons
         systemUiController.setStatusBarColor(
             color = Color(0xFF2A0790),
         )
@@ -564,6 +575,9 @@ fun TechnologiesStatusBar() {
 }
 
 
+/**
+ * A preview function for TechnologiesScreen.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PreviewTechnologies() {

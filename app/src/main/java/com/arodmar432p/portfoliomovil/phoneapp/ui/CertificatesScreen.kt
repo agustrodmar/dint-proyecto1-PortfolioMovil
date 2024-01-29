@@ -41,21 +41,23 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 /**
- * La composable principal de esta screen
+ * The main composable of this screen.
+ *
+ * @param navController exclusively for navigation
  */
 @Composable
 fun CertificatesScreen(navController: NavController) {
-    // Estado para controlar si se muestra o no la barra de navegación
+
     var showNavigationBar by remember { mutableStateOf(false) }
 
     CertificatesBackground()
 
-    // Cuando se pulse sobre este botón, se mostrará NavigationBar()
+
     MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenuamarillo)
 
     CertificatesStatusBar()
 
-    // Si showNavigationBar es true, se muestra la barra de navegación
+    //
     if (showNavigationBar) {
         Box(
             modifier = Modifier
@@ -78,8 +80,8 @@ fun CertificatesScreen(navController: NavController) {
 }
 
 /**
- * La composable donde se determina el color del background
- * así como los elementos adicionales que le componen.
+ * A composable where the background color is determined
+ * as well as the additional elements that compose it.
  */
 @Composable
 fun CertificatesBackground() {
@@ -117,7 +119,6 @@ fun CertificatesBackground() {
             )
         )
 
-        // Genero un segundo texto encima del primero para hacer efecto de sombras
         Text(
             text = "CERTIFICADOS",
             modifier = Modifier
@@ -141,7 +142,7 @@ fun CertificatesBackground() {
                 .fillMaxSize()
                 .height(IntrinsicSize.Min)
                 .align(Alignment.BottomCenter)
-                .offset(y = (screenHeight * 0.5).dp) // Ajusta este valor según tus necesidades
+                .offset(y = (screenHeight * 0.5).dp)
         )
 
         Image(
@@ -174,7 +175,7 @@ fun CertificatesBackground() {
                 .offset(y = (-80).dp, x = (30).dp)
         )
 
-        // Las tarjetas que representan los certificados junto a un scroll
+
         LazyRow(
             modifier = Modifier
                 .fillMaxSize()
@@ -189,19 +190,27 @@ fun CertificatesBackground() {
     }
 }
 
+
+/**
+ * A composable function that sets the status bar color for the certificates screen.
+ */
 @Composable
 fun CertificatesStatusBar() {
-    // Obtiene una referencia a SystemUiController
+    // Gets a reference to SystemUiController
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
-        // Establece el color de la barra de estado y los íconos
+        // Sets the status bar color and icons
         systemUiController.setStatusBarColor(
             color = Color(0xFF4668E1),
         )
     }
 }
 
+
+/**
+ * A preview function for PythonCertificate.
+ */
 @Preview
 @Composable
 fun PythonCertificate(){
@@ -228,6 +237,9 @@ fun PythonCertificate(){
     }
 }
 
+/**
+ * A preview function for CsharpCertificate.
+ */
 @Preview
 @Composable
 fun CsharpCertificate(){
@@ -236,7 +248,7 @@ fun CsharpCertificate(){
 
     Box(
         modifier = Modifier
-            .fillMaxSize() // A modificar si se desean añadir más cosas en la screen a futuro.
+            .fillMaxSize() // To modify if I need to add more things in the future.
     ){
         Image(
             painter = painterResource(id = R.drawable.csharpcertificate),
@@ -254,6 +266,9 @@ fun CsharpCertificate(){
     }
 }
 
+/**
+ * A preview function for MySqlCertificate.
+ */
 @Preview
 @Composable
 fun MySqlCertificate(){
@@ -281,6 +296,9 @@ fun MySqlCertificate(){
 }
 
 
+/**
+ * A preview function for JavaCertificate.
+ */
 @Preview
 @Composable
 fun JavaCertificate(){
@@ -307,6 +325,9 @@ fun JavaCertificate(){
     }
 }
 
+/**
+ * A preview function for CertificatesScreen.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PreviewCertificates() {
