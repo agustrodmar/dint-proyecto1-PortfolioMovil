@@ -38,11 +38,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.ui.platform.LocalDensity
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
@@ -107,182 +108,174 @@ fun PreviewContact() {
 
 @Composable
 fun ContactScreenBackground() {
+    BoxWithConstraints {
+        val width = with(LocalDensity.current) { constraints.maxWidth.toDp() }
+        val height = with(LocalDensity.current) { constraints.maxHeight.toDp() }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(
-                        Color(0xFF52F1FC),
-                        Color(0xFF52F1FC),
-                        Color(0xFFFFFFFF)
-                    ),
-                    startY = 0.0f,
-                    endY = Float.POSITIVE_INFINITY
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(
+                            Color(0xFF52F1FC),
+                            Color(0xFF52F1FC),
+                            Color(0xFFFFFFFF)
+                        ),
+                        startY = 0.0f,
+                        endY = Float.POSITIVE_INFINITY
+                    )
+                )
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.nubecontacto),
+                contentDescription = "A picture of a cloud with my logo",
+                modifier = Modifier
+                    .size(width * 0.45f)
+                    .height(height * 0.15f)
+                    .width(width * 0.25f)
+                    .align(Alignment.TopCenter)
+                    .padding(top = height * 0.01f)
+                    .offset(y = height * 0.04f)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.nubepeque2),
+                contentDescription = "A picture of small cloud, top left",
+                modifier = Modifier
+                    .size(width * 0.20f)
+                    .height(height * 0.2625f)
+                    .width(width * 0.1125f)
+                    .align(Alignment.TopStart)
+                    .padding(top = height * 0.025f)
+                    .offset(x = width * 0.01875f, y = height * -0.0125f)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.nubepeque3),
+                contentDescription = "A picture of small cloud, top right",
+                modifier = Modifier
+                    .size(width * 0.20f)
+                    .height(height * 0.25f)
+                    .width(width * 0.1125f)
+                    .align(Alignment.TopEnd)
+                    .padding(top = height * 0.025f)
+                    .offset(x = width * -0.0125f, y = height * -0.0125f)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.pajarorojo),
+                contentDescription = "A picture of small red bird.",
+                modifier = Modifier
+                    .size(width * 0.12f)
+                    .height(height * 0.25f)
+                    .width(width * 0.1125f)
+                    .align(Alignment.CenterEnd)
+                    .padding(top = height * 0.025f)
+                    .offset(x = width * -0.025f, y = height * -0.1f)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.pajarosepia),
+                contentDescription = "A picture of small cuttleflish bird.",
+                modifier = Modifier
+                    .size(width * 0.20f)
+                    .height(height * 0.1125f)
+                    .width(width * 0.1f)
+                    .align(Alignment.Center)
+                    .padding(top = height * 0.075f)
+                    .offset(x = width * -0.30f, y = height * -0.3f)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.pajarocadista),
+                contentDescription = "A picture of small yellow and blue bird",
+                modifier = Modifier
+                    .size(width * 0.12f)
+                    .height(height * 0.25f)
+                    .width(width * 0.1125f)
+                    .align(Alignment.Center)
+                    .padding(top = height * 0.025f)
+                    .offset(x = width * 0.30f, y = height * -0.2875f)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.ciudad),
+                contentDescription = "A city that is part of the wallpaper",
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.bosque),
+                contentDescription = "A small forest that is part of the wallpaper",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(height * 0.0375f)
+                    .align(Alignment.BottomCenter)
+                    .offset(x = width * 0.27f)
+            )
+
+            Text(
+                text = "Envíame un mensaje",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = height * 0.215f),
+                style = TextStyle(
+                    fontSize = 18.sp,
+                    fontFamily = FontFamily(Font(R.font.interbold)),
+                    fontWeight = FontWeight(100),
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
                 )
             )
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.nubecontacto),
-            contentDescription = "A picture of a cloud with my logo",
-            modifier = Modifier
-                .height(120.dp)
-                .width(200.dp)
-                .align(Alignment.TopCenter)
-                .padding(top = 10.dp)
-                .offset(y = (33).dp)
 
-        )
-
-        Image(
-            painter = painterResource(id = R.drawable.nubepeque2),
-            contentDescription = "A picture of small cloud, top left",
-            modifier = Modifier
-                .size(75.dp)
-                .height(210.dp)
-                .width(90.dp)
-                .align(Alignment.TopStart)
-                .padding(top = 20.dp)
-                .offset(x = 15.dp, y = (-10).dp)
-
-        )
-        Image(
-            painter = painterResource(id = R.drawable.nubepeque3),
-            contentDescription = "A picture of small cloud, top right",
-            modifier = Modifier
-                .size(70.dp)
-                .height(200.dp)
-                .width(90.dp)
-                .align(Alignment.TopEnd)
-                .padding(top = 20.dp)
-                .offset(x = (-10).dp, y = (-10).dp)
-
-        )
-
-        Image(
-            painter = painterResource(id = R.drawable.pajarorojo),
-            contentDescription = "A picture of small red bird.",
-            modifier = Modifier
-                .size(40.dp)
-                .height(200.dp)
-                .width(90.dp)
-                .align(Alignment.CenterEnd)
-                .padding(top = 20.dp)
-                .offset(x = (-20).dp, y = (-80).dp)
-
-        )
-        Image(
-            painter = painterResource(id = R.drawable.pajarosepia),
-            contentDescription = "A picture of small cuttleflish bird.",
-            modifier = Modifier
-                .size(80.dp)
-                .height(90.dp)
-                .width(80.dp)
-                .align(Alignment.Center)
-                .padding(top = 60.dp)
-                .offset(x = (-130).dp, y = (-240).dp)
-
-        )
-        Image(
-            painter = painterResource(id = R.drawable.pajarocadista),
-            contentDescription = "A picture of small yellow and blue bird",
-            modifier = Modifier
-                .size(40.dp)
-                .height(200.dp)
-                .width(90.dp)
-                .align(Alignment.Center)
-                .padding(top = 20.dp)
-                .offset(x = (120).dp, y = (-230).dp)
-
-        )
-
-        Image(
-            painter = painterResource(id = R.drawable.ciudad),
-            contentDescription = "A city that is part of the wallpaper",
-            modifier = Modifier
-                .align(Alignment.BottomStart)
-        )
-
-        Image(
-            painter = painterResource(id = R.drawable.bosque),
-            contentDescription = "A small forest that is part of the wallpaper",
-            modifier = Modifier
-                .fillMaxWidth()
-                .size(30.dp)
-                .align(Alignment.BottomCenter)
-                .offset(x = 100.dp)
-        )
-
-        Text(
-            text = "Envíame un mensaje",
-            modifier = Modifier
-                .width(200.dp)
-                .height(80.dp)
-                .align(Alignment.Center)
-                .padding(top = 40.dp)
-                .offset(x = 5.dp, y = (-220).dp),
-            style = TextStyle(
-                fontSize = 18.sp,
-                fontFamily = FontFamily(Font(R.font.interbold)),
-                fontWeight = FontWeight(100),
-                color = Color.Black,
-                textAlign = TextAlign.Justify
-
+            Text(
+                text = "Nombre",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = height * 0.295f)
+                    .offset(x = width * -0.20f),
+                style = TextStyle(
+                    fontSize = 11.sp,
+                    fontFamily = FontFamily(Font(R.font.interbold)),
+                    fontWeight = FontWeight(100),
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
             )
-        )
-        Text(
-            text = "Nombre",
-            modifier = Modifier
-                .width(200.dp)
-                .height(80.dp)
-                .align(Alignment.Center)
-                .padding(top = 40.dp)
-                .offset(x = (-10).dp, y = (-182).dp),
-            style = TextStyle(
-                fontSize = 11.sp,
-                fontFamily = FontFamily(Font(R.font.interbold)),
-                fontWeight = FontWeight(100),
-                color = Color.Black,
-                textAlign = TextAlign.Justify
 
+            Text(
+                text = "E-mail",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = height * 0.380f)
+                    .offset(x = width * -0.21f),
+                style = TextStyle(
+                    fontSize = 11.sp,
+                    fontFamily = FontFamily(Font(R.font.interbold)),
+                    fontWeight = FontWeight(100),
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
             )
-        )
-        Text(
-            text = "E-mail",
-            modifier = Modifier
-                .width(200.dp)
-                .height(80.dp)
-                .align(Alignment.Center)
-                .padding(top = 40.dp)
-                .offset(x = (-10).dp, y = (-112).dp),
-            style = TextStyle(
-                fontSize = 11.sp,
-                fontFamily = FontFamily(Font(R.font.interbold)),
-                fontWeight = FontWeight(100),
-                color = Color.Black,
-                textAlign = TextAlign.Justify
 
+            Text(
+                text = "Mensaje",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = height * 0.465f)
+                    .offset(x = width * -0.195f),
+                style = TextStyle(
+                    fontSize = 11.sp,
+                    fontFamily = FontFamily(Font(R.font.interbold)),
+                    fontWeight = FontWeight(100),
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
             )
-        )
-        Text(
-            text = "Mensaje",
-            modifier = Modifier
-                .width(200.dp)
-                .height(80.dp)
-                .align(Alignment.Center)
-                .padding(top = 40.dp)
-                .offset(x = (-10).dp, y = (-47).dp),
-            style = TextStyle(
-                fontSize = 11.sp,
-                fontFamily = FontFamily(Font(R.font.interbold)),
-                fontWeight = FontWeight(100),
-                color = Color.Black,
-                textAlign = TextAlign.Justify
-
-            )
-        )
-        ContactMenu()
+            ContactMenu()
+        }
     }
 }
 
@@ -294,89 +287,94 @@ fun ContactMenu() {
     var email by remember { mutableStateOf("") }
     var message by remember { mutableStateOf("") }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .offset(y = 190.dp)
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        // Campo de nombre
-        OutlinedTextField(
-            value = name,
-            onValueChange = { name = it },
+    BoxWithConstraints {
+        val width = with(LocalDensity.current) { constraints.maxWidth.toDp() }
+        val height = with(LocalDensity.current) { constraints.maxHeight.toDp() }
+
+        Column(
             modifier = Modifier
-                .width(220.dp)
-                .height(36.dp)
-                .background(Color.White)
-                .border(BorderStroke(1.dp, Color.White), RoundedCornerShape(30.dp)),
-            label = {},
-            colors = TextFieldDefaults.outlinedTextFieldColors(
-                focusedBorderColor = Color.White,
-                unfocusedBorderColor = Color.White
-            )
-        )
-
-        Spacer(modifier = Modifier.height(30.dp)) // Espacio entre los campos
-
-        // Campo de correo electrónico
-        OutlinedTextField(
-            value = email,
-            onValueChange = { email = it },
-            modifier = Modifier
-                .width(220.dp)
-                .height(36.dp)
-                .background(Color.White)
-                .border(BorderStroke(1.dp, Color.White), RoundedCornerShape(30.dp)),
-            label = {},
-            colors = TextFieldDefaults.outlinedTextFieldColors(
-                focusedBorderColor = Color.Transparent,
-                unfocusedBorderColor = Color.Transparent
-            )
-        )
-
-        Spacer(modifier = Modifier.height(30.dp)) // Espacio entre los campos
-
-        // Campo de mensaje
-        OutlinedTextField(
-            value = message,
-            onValueChange = { message = it },
-            modifier = Modifier
-                .width(220.dp)
-                .height(170.dp)
-                .background(Color.White)
-                .background(color = Color(0xFFFFFF), shape = RoundedCornerShape(size = 20.dp)),
-            label = {},
-            colors = TextFieldDefaults.outlinedTextFieldColors(
-                focusedBorderColor = Color.Transparent,
-                unfocusedBorderColor = Color.Transparent
-            )
-        )
-
-        Spacer(modifier = Modifier.height(15.dp)) // Espacio entre los campos
-
-        // Botón de enviar
-        Button(
-            onClick = { /* Aquí va la lógica de tu botón */ },
-            colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-            modifier = Modifier
-                .padding(1.dp)
-                .width(230.dp)
-                .height(57.dp)
-                .background(color = Color(0xFF0B0A0A), shape = RoundedCornerShape(size = 20.dp))
+                .fillMaxSize()
+                .offset(y = height * 0.2f)
+                .padding(96.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "Enviar",
+            // Campo de nombre
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it },
                 modifier = Modifier
-                    .width(65.dp)
-                    .height(24.dp),
-                style = TextStyle(
-                    fontSize = 20.sp,
-                    fontFamily = FontFamily(Font(R.font.interbold)),
-                    fontWeight = FontWeight(700),
-                    color = Color(0xFFFFFFFF)
+                    .width(width * 3.00f)
+                    .height(height * 0.04f)
+                    .background(Color.White)
+                    .border(BorderStroke(1.dp, Color.White), RoundedCornerShape(30.dp)),
+                label = {},
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    focusedBorderColor = Color.Transparent,
+                    unfocusedBorderColor = Color.Transparent
                 )
             )
+
+            Spacer(modifier = Modifier.height(height * 0.045f)) // Espacio entre los campos
+
+            // Campo de correo electrónico
+            OutlinedTextField(
+                value = email,
+                onValueChange = { email = it },
+                modifier = Modifier
+                    .width(width * 0.55f)
+                    .height(height * 0.04f)
+                    .background(Color.White)
+                    .border(BorderStroke(1.dp, Color.White), RoundedCornerShape(30.dp)),
+                label = {},
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    focusedBorderColor = Color.Transparent,
+                    unfocusedBorderColor = Color.Transparent
+                )
+            )
+
+            Spacer(modifier = Modifier.height(height * 0.045f)) // Espacio entre los campos
+
+            // Campo de mensaje
+            OutlinedTextField(
+                value = message,
+                onValueChange = { message = it },
+                modifier = Modifier
+                    .width(width * 0.55f)
+                    .height(height * 0.2f)
+                    .background(Color.White)
+                    .background(color = Color(0xFFFFFF), shape = RoundedCornerShape(size = 20.dp)),
+                label = {},
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    focusedBorderColor = Color.Transparent,
+                    unfocusedBorderColor = Color.Transparent
+                )
+            )
+
+            Spacer(modifier = Modifier.height(height * 0.015f)) // Espacio entre los campos
+
+            // Botón de enviar
+            Button(
+                onClick = { /* Aquí va la lógica de tu botón */ },
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                modifier = Modifier
+                    .padding(1.dp)
+                    .width(width * 0.575f)
+                    .height(height * 0.06f)
+                    .background(color = Color(0xFF0B0A0A), shape = RoundedCornerShape(size = 20.dp))
+            ) {
+                Text(
+                    text = "Enviar",
+                    modifier = Modifier
+                        .width(width * 0.1625f)
+                        .height(height * 0.03f),
+                    style = TextStyle(
+                        fontSize = 20.sp,
+                        fontFamily = FontFamily(Font(R.font.interbold)),
+                        fontWeight = FontWeight(700),
+                        color = Color(0xFFFFFFFF)
+                    )
+                )
+            }
         }
     }
 }

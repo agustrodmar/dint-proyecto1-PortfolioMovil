@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -42,8 +43,7 @@ import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import androidx.compose.material.Card
-
-
+import androidx.compose.ui.platform.LocalConfiguration
 
 
 @Composable
@@ -197,8 +197,6 @@ fun ProjectsStatusBar() {
         )
     }
 }
-
-
 
 @Preview(showBackground = true)
 @Composable
