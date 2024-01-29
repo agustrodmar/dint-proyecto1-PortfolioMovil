@@ -42,8 +42,7 @@ fun MainScreen(navController: NavController) {
     val screenWidth = configuration.screenWidthDp
     val screenHeight = configuration.screenHeightDp
 
-    // Defino las estrellas en posiciones por la parte inferior
-    // de la pantalla
+    // The small white stars that are going to be on the screen.
     val starPositions = remember { listOf(
         Pair(0.1f, 0.92f),
         Pair(0.3f, 0.65f),
@@ -55,7 +54,7 @@ fun MainScreen(navController: NavController) {
         Pair(0.6f, 0.75f)
     ) }
 
-    // Estado para controlar si se muestra o no la barra de navegación
+    // It controls if NavigationBar must be showed or not
     var showNavigationBar by remember { mutableStateOf(false) }
 
     Box(
@@ -179,12 +178,11 @@ fun MainScreen(navController: NavController) {
             }
         }
 
-        // Cuando se pulse sobre este botón, se mostrará NavigationBar()
+        // When pressed, it shows NavigationBar()
         MenuDots(onClick = { showNavigationBar = true }, drawableId = R.drawable.abrirmenublanco)
 
         BlackStatusBar()
 
-        // Si showNavigationBar es true, se muestra la barra de navegación
         if (showNavigationBar) {
             Box(
                 modifier = Modifier
@@ -200,7 +198,7 @@ fun MainScreen(navController: NavController) {
                         contentAlignment = Alignment.TopStart
                     ) {
                         NavigationBar(navController)
-                        //ScrollScreen() Por si quisiera activar el scroll más adelante
+                        //ScrollScreen() In case I do want to add scroll later on.
                     }
                 }
             }
@@ -208,19 +206,26 @@ fun MainScreen(navController: NavController) {
     }
 }
 
+
+/**
+ * A composable function that sets the status bar color to black.
+ */
 @Composable
 fun BlackStatusBar() {
     // Obtiene una referencia a SystemUiController
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
-        // Establece el color de la barra de estado y los íconos
+        // Establish a color for the status bar
         systemUiController.setStatusBarColor(
             color = Color.Black,
         )
     }
 }
 
+/**
+ * A preview function for MainScreen.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PreviewMainScreen() {

@@ -39,7 +39,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 /**
  * IMPORTANTE:
- * TODO: PARA PRUEBAS DE DISEÑO mapa de calor: https://vas.3m.com/
+ * TODO: PARA PRUEBAS DE DISEÑO mapa de calor: https://vas.3m.com/ (TESTEADAS 3 PANTALLAS)
  * TODO: PRUEBA DE LOS CINCO SEGUNDOS: http://www.uxables.com/
  * TODO: ENVIA EL DISEÑO A LOS USUARIOS PARA QUE LO TESTEEN: https://www.lyssna.com/
  */

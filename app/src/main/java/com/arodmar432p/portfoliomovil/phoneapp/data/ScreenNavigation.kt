@@ -1,3 +1,5 @@
+package com.arodmar432p.portfoliomovil.phoneapp.data
+
 /**
  * A sealed class representing different screens for navigation.
  *

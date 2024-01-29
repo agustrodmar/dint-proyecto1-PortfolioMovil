@@ -115,9 +115,6 @@ fun PreviewContact() {
 }
 
 
-/**
- * A composable function that displays the background for the contact screen.
- */
 
 @Composable
 fun ContactScreenBackground() {
@@ -149,7 +146,7 @@ fun ContactScreenBackground() {
                     .width(width * 0.25f)
                     .align(Alignment.TopCenter)
                     .padding(top = height * 0.01f)
-                    .offset(y = height * 0.04f)
+                    .offset(y = height * 0.025f)
             )
 
             Image(
@@ -247,7 +244,7 @@ fun ContactScreenBackground() {
                 text = "Nombre",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = height * 0.295f)
+                    .padding(top = height * 0.300f)
                     .offset(x = width * -0.20f),
                 style = TextStyle(
                     fontSize = 11.sp,
@@ -262,7 +259,7 @@ fun ContactScreenBackground() {
                 text = "E-mail",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = height * 0.380f)
+                    .padding(top = height * 0.387f)
                     .offset(x = width * -0.21f),
                 style = TextStyle(
                     fontSize = 11.sp,
@@ -277,7 +274,7 @@ fun ContactScreenBackground() {
                 text = "Mensaje",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = height * 0.465f)
+                    .padding(top = height * 0.471f)
                     .offset(x = width * -0.195f),
                 style = TextStyle(
                     fontSize = 11.sp,
