@@ -49,14 +49,14 @@ fun MainScreen(navController: NavController) {
     // Defino las estrellas en posiciones por la parte inferior
     // de la pantalla
     val starPositions = remember { listOf(
-        Pair(screenWidth * 0.1f, screenHeight * 0.92f),
-        Pair(screenWidth * 0.3f, screenHeight * 0.65f),
-        Pair(screenWidth * 0.80f, screenHeight * 0.8f),
-        Pair(screenWidth * 0.5f, screenHeight * 0.7f),
-        Pair(screenWidth * 0.8f, screenHeight * 0.95f),
-        Pair(screenWidth * 0.1f, screenHeight * 0.7f),
-        Pair(screenWidth * 0.25f, screenHeight * 0.8f),
-        Pair(screenWidth * 0.6f, screenHeight * 0.75f)
+        Pair(0.1f, 0.92f),
+        Pair(0.3f, 0.65f),
+        Pair(0.80f, 0.8f),
+        Pair(0.5f, 0.7f),
+        Pair(0.8f, 0.95f),
+        Pair(0.1f, 0.7f),
+        Pair(0.25f, 0.8f),
+        Pair(0.6f, 0.75f)
     ) }
 
     // Estado para controlar si se muestra o no la barra de navegación
@@ -94,7 +94,7 @@ fun MainScreen(navController: NavController) {
                 modifier = Modifier
                     .fillMaxSize()
                     .align(Alignment.BottomStart)
-                    .offset(x = x.dp, y = y.dp)
+                    .offset(x = (screenWidth * x).dp, y = (screenHeight * y).dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.star),
@@ -153,4 +153,3 @@ fun PreviewMainScreen() {
     val navController = rememberNavController()
     MainScreen(navController)
 }
-

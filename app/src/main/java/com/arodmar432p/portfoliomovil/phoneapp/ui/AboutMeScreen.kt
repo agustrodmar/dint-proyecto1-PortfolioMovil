@@ -55,22 +55,22 @@ fun AboutMe(navController: NavController) {
     // Defino las estrellas en posiciones por la parte inferior
     // de la pantalla
     val starPositions = remember { listOf(
-        Pair(screenWidth * 0.07f, screenHeight * 0.85f),
-        Pair(screenWidth * 0.85f, screenHeight * 0.21f),
-        Pair(screenWidth * 0.53f, screenHeight * 0.96f),
-        Pair(screenWidth * 0.3f, screenHeight * 0.07f),
-        Pair(screenWidth * 0.8f, screenHeight * 0.95f),
-        Pair(screenWidth * 0.1f, screenHeight * 0.08f),
-        Pair(screenWidth * 0.15f, screenHeight * 0.18f),
-        Pair(screenWidth * 0.84f, screenHeight * 0.89f),
-        Pair(screenWidth * 0.35f, screenHeight * 0.23f),
-        Pair(screenWidth * 0.6f, screenHeight * 0.12f)
+        Pair(0.07f, 0.85f),
+        Pair(0.85f, 0.21f),
+        Pair(0.53f, 0.96f),
+        Pair(0.3f, 0.07f),
+        Pair(0.8f, 0.95f),
+        Pair(0.1f, 0.08f),
+        Pair(0.15f, 0.18f),
+        Pair(0.84f, 0.89f),
+        Pair(0.35f, 0.23f),
+        Pair(0.6f, 0.12f)
     ) }
+
 
     Box(
         modifier = Modifier
-            .width(393.dp)
-            .height(852.dp)
+            .fillMaxSize()
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(Color(0xFF2F254C), Color(0xFF2A0790)),
@@ -138,7 +138,7 @@ fun AboutMe(navController: NavController) {
                 modifier = Modifier
                     .fillMaxSize()
                     .align(Alignment.BottomStart)
-                    .offset(x = x.dp, y = y.dp)
+                    .offset(x = (screenWidth * x).dp, y = (screenHeight * y).dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.star),

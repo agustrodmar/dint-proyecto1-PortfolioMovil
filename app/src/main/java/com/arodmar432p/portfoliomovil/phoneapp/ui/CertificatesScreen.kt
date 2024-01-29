@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -47,6 +48,10 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 fun Certificates(navController: NavController) {
     // Estado para controlar si se muestra o no la barra de navegación
     var showNavigationBar by remember { mutableStateOf(false) }
+
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+    val screenHeight = configuration.screenHeightDp
 
     CertificatesBackground()
 
@@ -83,6 +88,9 @@ fun Certificates(navController: NavController) {
  */
 @Composable
 fun CertificatesBackground() {
+    val configuration = LocalConfiguration.current
+    val screenHeight = configuration.screenHeightDp
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -138,7 +146,7 @@ fun CertificatesBackground() {
                 .fillMaxSize()
                 .height(IntrinsicSize.Min)
                 .align(Alignment.BottomCenter)
-                .offset(y = 360.dp)
+                .offset(y = (screenHeight * 0.5).dp) // Ajusta este valor según tus necesidades
         )
 
         Image(
@@ -199,59 +207,66 @@ fun CertificatesStatusBar() {
     }
 }
 
-@Preview
 @Composable
 fun PythonCertificate(){
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+
     val image: Painter = painterResource(id = R.drawable.pythoncertificate)
     Image(
         painter = image,
         contentDescription = "Python Certificate Card",
         modifier = Modifier
-            .padding( horizontal = 90.dp)
-            .size(220.dp)
+            .padding( horizontal = (screenWidth * 0.225).dp)
+            .size((screenWidth * 0.55).dp)
     )
 }
 
-@Preview
 @Composable
 fun CsharpCertificate(){
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+
     val image: Painter = painterResource(id = R.drawable.csharpcertificate)
     Image(
         painter = image,
         contentDescription = "C# Cerificate Card",
         modifier = Modifier
-            .padding( horizontal = 100.dp)
-            .size(220.dp)
+            .padding( horizontal = (screenWidth * 0.25).dp)
+            .size((screenWidth * 0.55).dp)
     )
 }
 
 
-@Preview
 @Composable
 fun MySqlCertificate(){
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+
     val image: Painter = painterResource(id = R.drawable.mysqlcertificate)
     Image(
         painter = image,
         contentDescription = "MySQL Certificate Card",
         modifier = Modifier
-            .padding( horizontal = 100.dp)
-            .size(220.dp)
+            .padding( horizontal = (screenWidth * 0.25).dp)
+            .size((screenWidth * 0.55).dp)
     )
 }
 
-@Preview
 @Composable
 fun JavaCertificate(){
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+
     val image: Painter = painterResource(id = R.drawable.pythoncertificate)
     Image(
         painter = image,
         contentDescription = "Java 8 Certificate Card",
         modifier = Modifier
-            .padding( horizontal = 100.dp)
-            .size(220.dp)
+            .padding( horizontal = (screenWidth * 0.25).dp)
+            .size((screenWidth * 0.55).dp)
     )
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -259,5 +274,3 @@ fun PreviewCertificates() {
     val navController = rememberNavController()
     Certificates(navController)
 }
-
-
