@@ -10,11 +10,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
+/**
+ * A composable that could allow the user to scroll between the
+ * differents screens in the project.
+ */
 @Preview
 @Composable
 fun ScrollScreen() {
 
-    // Las tarjetas que representan los certificados junto a un scroll
+    // A column that includes all different Screens.
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()

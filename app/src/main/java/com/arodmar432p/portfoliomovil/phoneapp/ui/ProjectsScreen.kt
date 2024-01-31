@@ -82,7 +82,7 @@ fun ProjectsScreen(navController: NavController) {
         }
     }
 
-    // El LazyRow para hacer scroll entre proyectos
+    // A lazyrow that allows scroll between projects.
     LazyRow(
         modifier = Modifier
             .fillMaxSize()
@@ -258,7 +258,7 @@ fun PythonCard() {
     }
 }
 
-    /**
+/**
  * A preview function for FigmaCard.
  */
 @Preview(showBackground = true)
@@ -506,6 +506,9 @@ fun UnityCard(){
     }
 }
 
+/**
+ * A preview composable for Crojects.
+ */
 @Preview(showBackground = true)
 @Composable
 fun PreviewCProjects() {

@@ -269,7 +269,7 @@ fun TargetsBox() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image( // La imagen se muestra arriba
+        Image( // The image on the top
             painter = painterResource(id = R.drawable.objetivos),
             contentDescription = "A guy on a Rocket",
             modifier = Modifier

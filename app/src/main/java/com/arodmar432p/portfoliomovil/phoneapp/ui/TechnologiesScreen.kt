@@ -37,12 +37,6 @@ import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
-/**
- * IMPORTANTE:
- *
- * TODO: PRUEBA DE LOS CINCO SEGUNDOS: http://www.uxables.com/
- * TODO: ENVIA EL DISEÑO A LOS USUARIOS PARA QUE LO TESTEEN: https://www.lyssna.com/
- */
 
 /**
  * A composable function that displays the TechnologiesScreen.

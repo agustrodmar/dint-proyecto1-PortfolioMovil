@@ -35,7 +35,11 @@ import androidx.navigation.compose.rememberNavController
 import com.arodmar432p.portfoliomovil.R
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
-
+/**
+ * Initial Screen of the App
+ *
+ * @param navController allows the user to navigate between screens.
+ */
 @Composable
 fun MainScreen(navController: NavController) {
     val configuration = LocalConfiguration.current

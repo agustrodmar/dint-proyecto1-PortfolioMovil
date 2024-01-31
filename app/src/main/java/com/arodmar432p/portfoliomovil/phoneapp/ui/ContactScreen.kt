@@ -115,7 +115,9 @@ fun PreviewContact() {
 }
 
 
-
+/**
+ * A composable that represents the background of the Concact Me Screen.
+ */
 @Composable
 fun ContactScreenBackground() {
     BoxWithConstraints {
